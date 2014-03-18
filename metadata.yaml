@@ -1,0 +1,17 @@
+name: charm-bootstrap-ansible
+summary: <Fill in summary here>
+maintainer: Developer Account <Developer.Account@localhost>
+description: |
+  <Multi-line description here>
+categories:
+  - misc
+subordinate: false
+provides:
+  provides-relation:
+    interface: interface-name
+requires:
+  requires-relation:
+    interface: interface-name
+peers:
+  peer-relation:
+    interface: interface-name

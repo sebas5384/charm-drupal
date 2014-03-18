@@ -1,0 +1,3 @@
+hooks/charmhelpers
+.coverage
+*.pyc
