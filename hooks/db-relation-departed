@@ -1,0 +1,6 @@
+#!/bin/sh
+
+source inc/common
+
+sed -i "s/include settings\.db\.php//" $config_file_path
+rm -f $config_db_file_path

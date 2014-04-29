@@ -1,14 +1,60 @@
 options:
-  string-option:
+  site-name:
     type: string
-    default: "Default Value"
-    description: "A short description of the configuration option"
-  boolean-option:
-    type: boolean
-    default: False
-    description: "A short description of the configuration option"
-  int-option:
+    default: "Your fresh new site"
+    description: "The Site Name, used when is a fresh install."
+  admin-username:
+    type: string
+    default: "admin"
+    description: "The default administrator user name."
+  admin-email:
+    type: string
+    default: "admin@localhost.com"
+    description: "The default administrator user name."
+  admin-password:
+    type: string
+    default: "123123"
+    description: "The default administrator password."
+  drupal-version:
+    type: string
+    default: "7"
+    description: "Drupal version, currently supported 6 and 7"
+  tuning-level:
+    default: "single"
+    type: string
+    description: |
+      "Tuning level is defined by 'bare', 'single' and 'optimized'.
+      - bare: Without APC and NFS mounted directory files.
+      - single: With APC and NFS working, ready to horizontal scale, but needs to have a NFS relation.
+      - optimized: With bare and single, plus Entity Cache module enabled."
+  drupal-profile:
+    type: string
+    default: "standard"
+    description: "Profile name like standard, minimal or testing."
+  deploy-branch:
+    type: string
+    default: "master"
+    description: "The branch's name when a Git repository is deployed."
+  deploy-source:
+    type: string
+    default: "drupal.org"
+    description: |
+      "From where the Drupal will be downloaded, currently supported a repository Git (Ex. git@host:path/repo.git) or 'drupal.org'.
+      Deploying from Git a Lullabot boilerplate fork is expected, like https://github.com/TallerWebSolutions/drupal-boilerplate"
+  deploy-key:
+    type: string
+    default: ""
+    description: "A deploy ssh key that is stored on the server and grants access to a repository (Git only)."
+  nginx-port:
     type: int
-    default: 9001
-    description: "A short description of the configuration option"
+    default: 80
+    description: "The port number where Nginx will listen."
+  php-fpm-upstream:
+    type: string
+    default: "unix"
+    description: "The PHP-FPM upstream, supported unix and tcp."
+  install-compass:
+    type: boolean
+    default: True
+    description: "Install SASS/Compass, so that means ruby-full and rubygems1.8 will be installed."
 

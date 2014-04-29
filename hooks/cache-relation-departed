@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source inc/common
+
+sed -i "s/include settings\.cache\.php//" $config_file_path
+
+rm -f $config_cache_file_path
+rm -f .cache
+
+drupal_clear_all_cache

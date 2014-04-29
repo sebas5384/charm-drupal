@@ -1,72 +1,41 @@
-charm-bootstrap-ansible
-=======================
+Describe the intended usage of this charm and anything unique about how
+this charm relates to others here. 
 
-A quick way to get started creating a [juju][1] charm using
-[ansible][2].
+This README will be displayed in the Charm Store, it should be either Markdown or RST. Ideal READMEs include instructions on how to use the charm, expected usage, and charm features that your audience might be interested in. For an example of a well written README check out Hadoop: http://jujucharms.com/charms/precise/hadoop
 
-Disclaimer: this template does not try to explain what's possible with
-either ansible or juju - but if you know a bit about both, it will
-show you how you can easily use them together.
+Here's an example you might wish to template off of:
 
-Make sure you have both git and bzr installed and then:
+Overview
+--------
 
-```
-$ mkdir -p charms/precise && cd charms/precise
-$ git clone https://github.com/absoludity/charm-bootstrap-ansible.git mycharm
-$ cd mycharm
-$ make
-```
+This charm provides (service) from (service homepage). Add a description here of what the service itself actually does. 
 
-That will pull in the required charm-helpers library and run the unit-tests.
-Take a look around at the hooks/hooks.py or the playbooks/site.yaml,
-or deploy it with:
 
-```
-$ juju deploy --repository=../.. local:charm-bootstrap-ansible
-```
+Usage
+-----
 
-If you'd like to explore what's happening when the hooks run,
-once juju status tells you that the services has 'started', you can
-open another terminal up and run
+Step by step instructions on using the charm:
 
-```
-$ juju debug-hooks charm-bootstrap-ansible/0
-```
+    juju deploy servicename
 
-Back in your original terminal, let's change one of the config
-options (defined in the config.yaml):
+and so on. If you're providing a web service or something that the end user needs to go to, tell them here, especially if you're deploying a service that might listen to a non-default port. 
 
-```
-$ juju set charm-bootstrap-ansible string-option="Hi there"
-```
+You can then browse to http://ip-address to configure the service. 
 
-Back in your debug-hooks terminal, you'll see the prompt
-has changed to let you know it's ready to run the config-changed
-hook. Run the hook to see what it does with:
+Configuration
+-------------
 
-```
-$ hooks/config-changed
-```
+The configuration options will be listed on the charm store, however If you're making assumptions or opinionated decisions in the charm (like setting a default administrator password), you should detail that here so the user knows how to change it immediately, etc.
 
-You'll see the output of ansible running all the tasks tagged with
-'config-changed', including a debug message with the value of
-the config option that you changed. Just 'exit' to let juju know
-the hook execution has finished.
 
-Have fun exploring the possibilities of ansible and juju!
+Contact Information
+-------------------
 
-### Note about Dependencies
-The makefile to run tests requires the following dependencies
+Though this will be listed in the charm store itself don't assume a user will know that, so include that information here:
 
-- python-nose
-- python-mock
-- python-flake8
+Author:
+Report bugs at: http://bugs.launchpad.net/charms/+source/charmname
+Location: http://jujucharms.com/charms/distro/charmname
 
-installable via: 
+* Be sure to remove the templated parts before submitting to https://launchpad.net/charms for inclusion in the charm store.
 
-```
-$ sudo apt-get install python-nose python-mock python-flake8
-```
-
-[1]: http://juju.ubuntu.com/
-[2]: http://ansibleworks.com/

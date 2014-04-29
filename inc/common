@@ -1,0 +1,231 @@
+#!/bin/bash
+#
+#    common - Common functions
+#
+#    Based in Marco Ceppi <marco@ceppi.net> code of the wordpress juju charm.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+export PATH="/home/ubuntu/.composer/vendor/bin:$PATH"
+
+# Charm configurations.
+SITE_NAME=$(config-get site-name)
+
+ADMIN_USERNAME=$(config-get admin-username)
+ADMIN_EMAIL=$(config-get admin-email)
+ADMIN_PASSWORD=$(config-get admin-password)
+
+DRUPAL_VERSION=$(config-get drupal-version)
+TUNING_LEVEL=$(config-get tuning-level)
+
+DEPLOY_SOURCE=$(config-get deploy-source)
+DEPLOY_BRANCH=$(config-get deploy-branch)
+DEPLOY_KEY=$(config-get deploy-key)
+
+INSTALL_COMPASS=$(config-get install-compass)
+PHP_FPM_UPSTREAM=$(config-get php-fpm-upstream)
+
+hostname=`unit-get public-address`
+private_name=`hostname --all-fqdns | cut -f 1 -d ' '`
+
+project_path="/var/www"
+drupal_path="$project_path/docroot"
+
+# drupal_path="/Users/sebas/Sites/sandbox/d7-stable.sb.local"
+# drupal_path="/Users/sebas/Sites/sandbox"
+config_file_path="$drupal_path/sites/default/settings.php"
+config_local_file_path="$drupal_path/sites/default/settings.local.php"
+config_db_file_path="$drupal_path/sites/default/settings.db.php"
+config_cache_file_path="$drupal_path/sites/default/settings.cache.php"
+
+is_drupal_downloaded()
+{
+  [ -f "$drupal_path/index.php" ]
+}
+
+is_drupal_configurated()
+{
+  [ -f "$config_file_path" ]
+}
+
+is_drupal_booting()
+{
+  is_drupal_configurated || return 1
+  (
+    cd $drupal_path
+    if [[ ! -z `drush status | grep -e "Drupal bootstrap.*\:.*Successful"` ]]; then
+      return 0
+    else
+      return 1
+    fi
+  )
+}
+
+drupal_clear_all_cache()
+{
+  (
+    cd $drupal_path
+    drush cc all
+  )
+}
+
+need_new_install()
+{
+  [ ! -f .deploy-source ] || [ `cat .deploy-source` != "$DEPLOY_SOURCE" ]
+}
+
+is_project_from_git()
+{
+  # Not very safe.
+  [ "$DEPLOY_SOURCE" != "drupal.org" ]
+}
+
+do_git()
+{
+  if [[ -f /home/ubuntu/.ssh/deploy_key ]]; then
+    /usr/bin/git-wrapped -i /home/ubuntu/.ssh/deploy_key $@
+  fi
+}
+
+do_git_flow_init()
+{
+  juju-log "Configurating Git Flow with master and dev branches."
+
+  git config gitflow.branch.master 'master'
+  git config gitflow.branch.develop 'dev'
+  git config gitflow.prefix.feature 'fs/'
+  git config gitflow.prefix.release 'release/'
+  git config gitflow.prefix.hotfix 'hotfix/'
+  git config gitflow.prefix.support 'support/'
+  git config gitflow.prefix.versiontag "$DRUPAL_VERSION.x-"
+
+  # Creating the dev branch if doesn't exist.
+  if [[ -z `git branch | grep dev` ]]; then
+    do_git branch dev
+  fi
+}
+
+total_memory()
+{
+  echo $((`awk '/MemTotal/{print $2}' /proc/meminfo` / 1024))
+}
+
+apc_shm_size()
+{
+  all_memory=`total_memory`
+  if [ -z $all_memory ]; then
+    echo 256 # Play it safe, no memory was reported.
+    return 0
+  fi
+
+  if [ $all_memory -gt 1280 ]; then
+    echo 1024
+  else
+    echo $((all_memory * 80 / 100))
+  fi
+}
+
+make_bare()
+{
+  # Un-do APC
+  rm -f /etc/php5/conf.d/apc.ini
+
+  # IF there is an NFS mount, get everything out of it.
+  if [ -f .nfs-mount ]; then
+    # Check if we actually have a symlink
+    if [ -L $project_path ]; then
+      rm -f $project_path
+      rsync -az /mnt/$private_name $project_path
+    fi
+  fi
+
+  (
+    cd $drupal_path
+
+    # Entity Cache.
+    # Disable if exist.
+    if [ ! -z `drush pm-list | grep entitycache` ]; then
+      drush dis -y entitycache
+    fi
+  )
+
+  juju-log "We are now bare"
+}
+
+make_single()
+{
+  make_bare
+
+  juju-log "Installing PHP apc.ini ..."
+  rm -f /etc/php5/conf.d/apc.ini
+  install -o root -g root -m 0644 files/charm/php/apc.ini /etc/php5/conf.d/apc.ini
+
+  shm_size=`apc_shm_size`
+  sed -i -e "s/^apc\.shm_size=.*$/apc.shm_size=${shm_size}M/" /etc/php5/conf.d/apc.ini
+
+  ## We do NFS here, because Configuration changes cascade. So to get to Optimzied you *must* first 
+  ## make "single" (and by association, "bare"). Since nfs is both a single and optimized thing we do it now.
+
+  do_nfs
+
+  juju-log "We are now single, ALL THE SINGLE UNITS ALL THE SINGLE UNITS"
+}
+
+make_optimized()
+{
+  make_single
+  
+  (
+    cd $drupal_path
+
+    # Entity Cache.
+    # Download if needed.
+    if [[ -z `drush pm-list | grep entitycache` ]]; then
+      drush dl entitycache
+    fi
+    # Install.
+    drush en -y entitycache
+  )
+
+  juju-log "We are now optimized prime"
+}
+
+do_nfs()
+{
+  if [ -f .nfs-mount ]; then
+    # This has all the NFS mount stuff in it.
+    source .nfs-mount
+    mkdir -p /mnt/$private_name
+    if grep -qs '/mnt/$private_name' /proc/mounts; then
+      juju-log "We're already mounted."
+    else
+      mount -t $MOUNT_TYPE $MOUNT_OPS $MOUNT_SERVER:$MOUNT_PATH /mnt/$private_name
+      if [ $? -ne 0 ]; then
+        juju-log "Could not connect to file-server"
+        exit 1 # OH THE HUMANITY OF IT ALL
+      fi
+      if [ ! -d /mnt/$private_name/docroot/index.php ]; then
+        rsync -az $project_path /mnt/$private_name
+      fi
+
+      # Backup, just in case.
+      mv $project_path $project_path.bak.$(date +%Y%m%d-%H%M%S) && rm -rf $project_path
+      ln -s /mnt/wordpress/wp-content $project_path
+      juju-log "Mounted NFS"
+    fi
+  else
+    juju-log "There is no nfs mount, not sure what to do, so we'll just bail"
+  fi
+}

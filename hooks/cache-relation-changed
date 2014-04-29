@@ -1,0 +1,25 @@
+#!/bin/bash
+
+source inc/common
+
+cache_host=`relation-get hostname`
+cache_port=`relation-get port`
+
+rm -f .cache
+
+cat > .cache <<EOF
+#!/bin/bash
+CACHE_HOST=$cache_host
+CACHE_PORT=$cache_port
+
+EOF
+
+# Drupal: Include the new Settings.
+install -o ubuntu -g www-data -m 0644 files/drupal/settings.cache.php $drupal_path/sites/default/settings.cache.php
+
+sed -i "s/\${host}/$cache_host/" $config_cache_file_path
+sed -i "s/\${port}/$cache_port/" $config_cache_file_path
+
+echo -e "\ninclude settings.cache.php" >> $config_file_path
+
+source hooks/config-changed

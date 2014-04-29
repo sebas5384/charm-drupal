@@ -1,1 +1,180 @@
-hooks.py
+#!/bin/bash
+
+source inc/common
+
+# Nginx: Perusion configurations.
+if [[ ! -f .nginx-confs && `cat .nginx-confs` != "perusio" ]]; then
+  juju-log "Configuring Nginx with Perusio Confs."
+  mv /etc/nginx /etc/nginx_default
+  git clone https://github.com/perusio/drupal-with-nginx.git -b D$DRUPAL_VERSION /etc/nginx
+  
+  if [ -d /etc/nginx/sites-enabled ]; then
+    rm -rf /etc/nginx/sites-enabled
+  fi
+  mkdir /etc/nginx/sites-enabled
+
+  echo "perusio" > .nginx-confs
+
+  # Default configuration file.
+  cp files/charm/nginx/default.conf /etc/nginx/sites-available/
+fi
+
+# PHP-FPM: Upstream configuration.
+if [[ "$PHP_FPM_UPSTREAM" == "unix" ]]; then
+  # Uncomment via unix.
+  sed -i "s/^    #include upstream_phpcgi_unix/    include upstream_phpcgi_unix/" /etc/nginx/nginx.conf
+  # Comment via tcp.
+  sed -i "s/^    include upstream_phpcgi_tcp/    #include upstream_phpcgi_tcp/" /etc/nginx/nginx.conf
+else
+  # Uncomment via tcp.
+  sed -i "s/^    #include upstream_phpcgi_tcp/    include upstream_phpcgi_tcp/" /etc/nginx/nginx.conf
+  # Comment via unix.
+  sed -i "s/^    include upstream_phpcgi_unix/   #include upstream_phpcgi_unix/" /etc/nginx/nginx.conf
+fi
+
+# OS staff: Setting Deploy key.
+if is_project_from_git && [[ ! -z $DEPLOY_KEY ]]; then
+  
+  juju-log "Write the deploy ssh key."
+  echo "$DEPLOY_KEY" > /home/ubuntu/.ssh/deploy.key
+  chown ubuntu:ubuntu /home/ubuntu/.ssh/deploy.key
+  chmod 400 /home/ubuntu/.ssh/deploy.key
+
+  if [[ ! -f /usr/bin/git-wrapped ]]; then
+    wget https://raw2.github.com/sebas5384/utils/master/bin/git.sh
+    mv git.sh /usr/bin/git-wrapped
+    chmod +x /usr/bin/git-wrapped
+  fi
+
+elif [[ -f /home/ubuntu/.ssh/deploy.key ]]; then
+  juju-log "Removing ssh deploy key."
+  rm /home/ubuntu/.ssh/deploy.key
+fi
+
+# Drupal project: Needs to install a new fresh Drupal project.
+if need_new_install; then
+
+  echo "$DEPLOY_SOURCE" > .deploy-source
+
+  # Drupal: Check if there is a Drupal running.
+  if is_drupal_booting; then
+    juju-log "Backuping the settings.php files for using with the new project."
+    # @TODO: Needs to do a Backup.
+    # 1. backup the settings.*.php files
+    # 2. backup the files somewhere.
+    # 3. Clean and remove for the new project.
+    rm -rf $project_path
+  fi
+
+  # Download the project files including Drupal if not exist.
+  if ! is_drupal_downloaded; then
+
+    # From Git, already installed.
+    if is_project_from_git; then
+
+      juju-log "Cloning the project from Git repository $DEPLOY_SOURCE."
+      do_git clone $DEPLOY_SOURCE $project_path
+  
+    # From Drupal.org with drush.
+    else
+      (
+        juju-log "Download a fresh Drupal $DRUPAL_VERSION using a boilerplate as directory skeleton."
+        
+        rm -rf $project_path
+        
+        cd /mnt/tmp
+        # @TODO: This could be an option.
+        wget https://github.com/TallerWebSolutions/drupal-boilerplate/archive/master.tar.gz
+        tar -zxvf master.tar.gz; rm master.tar.gz
+        rm -rf $project_path; mv drupal-boilerplate-master $project_path
+
+        juju-log "Downloading Drupal from Drupal.org with drush."
+        if [[ $DRUPAL_VERSION == "8" ]]; then
+          /home/ubuntu/.composer/vendor/bin/drush dl drupal-8 --dev --drupal-project-rename="drupal_fresh" --destination=/mnt/tmp
+        else
+          /home/ubuntu/.composer/vendor/bin/drush dl drupal-$DRUPAL_VERSION --drupal-project-rename="drupal_fresh" --destination=/mnt/tmp
+        fi
+
+        juju-log "Move the new Drupal to the docroot."
+        rm -rf $drupal_path;
+        mv /mnt/tmp/drupal_fresh $drupal_path
+      )
+      
+      # Setting some directories.
+      mkdir $drupal_path/sites/all/modules/contrib
+      mkdir $drupal_path/sites/all/themes/contrib
+
+      (
+        cd $project_path
+        git init
+      )
+    fi
+
+    juju-log "Configure the Git Flow init."
+    (
+      cd $project_path
+      # Init the Git flow.
+      do_git_flow_init
+    )
+  fi
+
+  # Directory for upload files.
+  mkdir $drupal_path/sites/default/files
+  chmod ug+w $drupal_path/sites/default/files
+
+  # Set the right owners.
+  chown -R ubuntu:www-data $project_path
+fi
+
+if [[ ! -z $DEPLOY_BRANCH ]] && [[ -f .deploy-branch || `cat .deploy-branch` != "$DEPLOY_BRANCH" ]]; then
+  juju-log "Git checkout to the $DEPLOY_BRANCH branch."
+  (
+    cd $project_path
+
+    # Checkout to the deploy branch.
+    git checkout $DEPLOY_BRANCH
+    echo "$DEPLOY_BRANCH" > .deploy-branch
+  )
+fi
+
+# Compass: The project needs Ruby for Sass and Compass.
+if [[ "$INSTALL_COMPASS" == "True" ]] && [[ ! -f .installed-compass ]]; then
+  juju-log "Install Compass and SASS"
+  apt-get install -y ruby-full rubygems1.8
+  gem install sass -v 3.2.7
+  gem install compass
+
+  # Ignore css and generated sprite images.
+  # @TODO
+
+  touch .installed-compass
+fi
+if [[ "$INSTALL_COMPASS" == "False" ]] && [[ -f .installed-compass ]]; then
+  juju-log "Uninstall Compass and SASS"
+  apt-get remove -y --purge ruby-full rubygems1.8
+  rm .installed-compass
+fi
+
+juju-log "Setting this tuning level: $TUNING_LEVEL"
+# Prepare Drupal to store cache into a Redis master server, if is related.
+if [ "$TUNING_LEVEL" == "optimized" ]; then
+  make_optimized
+
+# We need to prepare an NFS mount, because someone is probably
+# going to try to scale out. We also need to vamp up caching.
+elif [ "$TUNING_LEVEL" == "single" ]; then
+  make_single
+
+# Okay, you know what you're doing. You're probably going to
+# use Gluster to stream-line your files, so you don't need to
+# disable anything. We trust you to do what you need to.
+elif [ "$TUNING_LEVEL" == "bare" ]; then
+  make_bare
+
+else
+  juju-log "Not sure about that tuning level."
+  exit 1
+fi
+
+# Restart all services.
+. hooks/restart

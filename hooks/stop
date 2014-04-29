@@ -1,1 +1,5 @@
-hooks.py
+#!/bin/bash
+
+close-port 80
+service nginx stop
+service php5-fpm stop

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+set -eu
+
+source inc/common
+
+if [ -f "$config_db_file_path" ]; then
+  juju-log "Drupal is already setup, just silently going away"
+  exit 0
+fi
+
+host=`relation-get private-address`
+database=`relation-get database`
+user=`relation-get user`
+password=`relation-get password`
+
+if [ -z "$database" ]; then
+  juju-log "The database couldn't be created."
+  exit 0
+fi
+
+# Drupal: Fill with the db relation info.
+cp files/charm/drupal/settings.db.php $config_db_file_path
+sed -i "s/\${host}/$host/" $config_db_file_path
+sed -i "s/\${database}/$database/" $config_db_file_path
+sed -i "s/\${user}/$user/" $config_db_file_path
+sed -i "s/\${password}/$password/" $config_db_file_path
+
+# Install or configure the database.
+(
+  cd $drupal_path
+  
+  # If needed create the local settings file.
+  if [ ! -f $config_local_file_path ]; then
+    echo "<?php" > $config_local_file_path
+  fi
+
+  # Fresh install.
+  if ! is_drupal_configurated; then
+    # Install Drupal, hell yeah!!
+    drush site-install -y standard --db-url=mysql://$user:$password@$host/$database --site-name="$SITE_NAME" --account-name="$ADMIN_USERNAME" --account-pass="$ADMIN_PASSWORD" --account-mail="$ADMIN_EMAIL" --clean-url=1
+
+    # Include the local settings.
+    echo -e "\ninclude 'settings.local.php';" >> $config_file_path
+  fi
+
+  # Include the db info into local settings.
+  echo -e "\ninclude 'settings.db.php';" >> $config_local_file_path
+)
+
+juju-log "Resetting permissions"
+chmod 0644 $drupal_path/sites/default/settings*.php
+chown -R ubuntu:www-data $project_path
+
+# When project is from an existent Git repository, will try to import the dump form the branch.
+if is_project_from_git && [ -f $project_path/databases/$DEPLOY_BRANCH.dump.sql ]; then
+  juju-log "Trying to importing MySQL dump in /databases/$DEPLOY_BRANCH.dump.sql"
+  (
+    cd $drupal_path
+    drush sqlc < $project_path/databases/$DEPLOY_BRANCH.dump.sql
+  )
+  drupal_clear_all_cache
+fi
+
+juju-log "Enable the default Nginx configuration"
+ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+
+. hooks/restart
+
+# Make it publicly visible, once the Drupal service is exposed
+open-port 80/tcp
