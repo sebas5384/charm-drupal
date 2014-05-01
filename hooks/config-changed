@@ -96,7 +96,7 @@ if need_new_install; then
         fi
 
         juju-log "Move the new Drupal to the docroot."
-        rm -rf $drupal_path;
+        rm -rf $drupal_path
         mv /mnt/tmp/drupal_fresh $drupal_path
       )
       

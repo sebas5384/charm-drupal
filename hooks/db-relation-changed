@@ -32,7 +32,7 @@ sed -i "s/\${password}/$password/" $config_db_file_path
   
   # If needed create the local settings file.
   if [ ! -f $config_local_file_path ]; then
-    echo "<?php" > $config_local_file_path
+    echo "<?php " > $config_local_file_path
   fi
 
   # Fresh install.
@@ -57,7 +57,7 @@ if is_project_from_git && [ -f $project_path/databases/$DEPLOY_BRANCH.dump.sql ]
   juju-log "Trying to importing MySQL dump in /databases/$DEPLOY_BRANCH.dump.sql"
   (
     cd $drupal_path
-    drush sqlc < $project_path/databases/$DEPLOY_BRANCH.dump.sql
+    drush sqlc < $project_path/databases/$DEPLOY_BRANCH-dump.sql
   )
   drupal_clear_all_cache
 fi

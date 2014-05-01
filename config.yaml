@@ -19,6 +19,10 @@ options:
     type: string
     default: "7"
     description: "Drupal version, currently supported 6 and 7"
+  drupal-profile:
+    type: string
+    default: "standard"
+    description: "Profile name like standard, minimal or testing."
   tuning-level:
     default: "single"
     type: string
@@ -27,10 +31,6 @@ options:
       - bare: Without APC and NFS mounted directory files.
       - single: With APC and NFS working, ready to horizontal scale, but needs to have a NFS relation.
       - optimized: With bare and single, plus Entity Cache module enabled."
-  drupal-profile:
-    type: string
-    default: "standard"
-    description: "Profile name like standard, minimal or testing."
   deploy-branch:
     type: string
     default: "master"

@@ -94,8 +94,8 @@ is_project_from_git()
 
 do_git()
 {
-  if [[ -f /home/ubuntu/.ssh/deploy_key ]]; then
-    /usr/bin/git-wrapped -i /home/ubuntu/.ssh/deploy_key $@
+  if [[ -f /home/ubuntu/.ssh/deploy.key ]]; then
+    /usr/bin/git-wrapped -i /home/ubuntu/.ssh/deploy.key $@
   fi
 }
 
@@ -113,7 +113,7 @@ do_git_flow_init()
 
   # Creating the dev branch if doesn't exist.
   if [[ -z `git branch | grep dev` ]]; then
-    do_git branch dev
+    git branch dev
   fi
 }
 
