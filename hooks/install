@@ -4,12 +4,14 @@ set -xe
 
 source inc/common
 
+juju-log "Go crazy !!"
+
 juju-log "Configure the right APT sources."
 add-apt-repository ppa:charmers/charm-helpers -y
 apt-get update
 
 juju-log "Installing tools like Wget, Git, Vim."
-apt-get -y install wget git-core git-flow curl vim rsync sysstat mailutils charm-helper-sh mktemp aptitude nfs-common make
+apt-get -y install wget git-core git-flow curl vim rsync sysstat mailutils charm-helper-sh mktemp aptitude nfs-common make mysql-client
 
 modprobe nfs || true
 
@@ -83,4 +85,4 @@ source /home/ubuntu/.bashrc
 juju-log "Installing Drush 6.* with composer"
 composer global require drush/drush:6.*
 
-juju-log "So, environment is setup. We'll wait for some hooks to fire off before we get all crazy"
+juju-log "So, environment is setup. We'll wait for some hooks to fire off before we get all crazy again."

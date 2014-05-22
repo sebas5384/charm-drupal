@@ -50,6 +50,10 @@ config_local_file_path="$drupal_path/sites/default/settings.local.php"
 config_db_file_path="$drupal_path/sites/default/settings.db.php"
 config_cache_file_path="$drupal_path/sites/default/settings.cache.php"
 
+_run_cmd_user() {
+  su ubuntu -c "${@}"
+}
+
 is_drupal_downloaded()
 {
   [ -f "$drupal_path/index.php" ]
@@ -95,7 +99,8 @@ is_project_from_git()
 do_git()
 {
   if [[ -f /home/ubuntu/.ssh/deploy.key ]]; then
-    /usr/bin/git-wrapped -i /home/ubuntu/.ssh/deploy.key $@
+    git_command=$@
+    _run_cmd_user "/usr/bin/git-wrapped -i /home/ubuntu/.ssh/deploy.key $git_command"
   fi
 }
 

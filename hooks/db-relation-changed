@@ -53,8 +53,8 @@ chmod 0644 $drupal_path/sites/default/settings*.php
 chown -R ubuntu:www-data $project_path
 
 # When project is from an existent Git repository, will try to import the dump form the branch.
-if is_project_from_git && [ -f $project_path/databases/$DEPLOY_BRANCH.dump.sql ]; then
-  juju-log "Trying to importing MySQL dump in /databases/$DEPLOY_BRANCH.dump.sql"
+if is_project_from_git && [ -f $project_path/databases/$DEPLOY_BRANCH-dump.sql ]; then
+  juju-log "Trying to importing MySQL dump in /databases/$DEPLOY_BRANCH-dump.sql"
   (
     cd $drupal_path
     drush sqlc < $project_path/databases/$DEPLOY_BRANCH-dump.sql
@@ -62,8 +62,10 @@ if is_project_from_git && [ -f $project_path/databases/$DEPLOY_BRANCH.dump.sql ]
   drupal_clear_all_cache
 fi
 
-juju-log "Enable the default Nginx configuration"
-ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+if [ -f /etc/nginx/sites-enabled/default.conf ]; then
+  juju-log "Enable the default Nginx configuration"
+  ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+fi
 
 . hooks/restart
 

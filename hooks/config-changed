@@ -73,7 +73,10 @@ if need_new_install; then
     if is_project_from_git; then
 
       juju-log "Cloning the project from Git repository $DEPLOY_SOURCE."
-      do_git clone $DEPLOY_SOURCE $project_path
+      (
+        mkdir $project_path; chown -R ubuntu:www-data $project_path; cd $project_path
+        do_git clone $DEPLOY_SOURCE .
+      )
   
     # From Drupal.org with drush.
     else
@@ -133,8 +136,8 @@ if [[ ! -z $DEPLOY_BRANCH ]] && [[ -f .deploy-branch || `cat .deploy-branch` != 
 
     # Checkout to the deploy branch.
     git checkout $DEPLOY_BRANCH
-    echo "$DEPLOY_BRANCH" > .deploy-branch
   )
+  echo "$DEPLOY_BRANCH" > .deploy-branch
 fi
 
 # Compass: The project needs Ruby for Sass and Compass.
