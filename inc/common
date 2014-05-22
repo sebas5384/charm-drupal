@@ -77,6 +77,14 @@ is_drupal_booting()
   )
 }
 
+drupal_updb()
+{
+  (
+    cd $drupal_path
+    drush updb -y
+  )
+}
+
 drupal_clear_all_cache()
 {
   (

@@ -57,12 +57,13 @@ if is_project_from_git && [ -f $project_path/databases/$DEPLOY_BRANCH-dump.sql ]
   juju-log "Trying to importing MySQL dump in /databases/$DEPLOY_BRANCH-dump.sql"
   (
     cd $drupal_path
-    drush sqlc < $project_path/databases/$DEPLOY_BRANCH-dump.sql
+    mysql -h $host -u $user -p$password $database < $project_path/databases/$DEPLOY_BRANCH-dump.sql
   )
-  drupal_clear_all_cache
+
+  drupal_updb
 fi
 
-if [ -f /etc/nginx/sites-enabled/default.conf ]; then
+if [ ! -f /etc/nginx/sites-enabled/default.conf ]; then
   juju-log "Enable the default Nginx configuration"
   ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 fi
