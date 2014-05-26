@@ -28,6 +28,10 @@ mv /etc/php5/fpm/php.ini /etc/php5/fpm/php.ini_default
 cp /opt/php-fpm-example-config/fpm/php5-fpm.conf /etc/php5/fpm/php-fpm.conf
 cp /opt/php-fpm-example-config/fpm/php.ini /etc/php5/fpm/
 cp -a /opt/php-fpm-example-config/fpm/pool.d /etc/php5/fpm/
+sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www.conf
+sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www0.conf
+sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www1.conf
+sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www2.conf
 
 # Nginx: install.
 juju-log "Download, compile and install Nginx with all the extra modules like Upload Progress."

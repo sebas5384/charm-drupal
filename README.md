@@ -16,7 +16,7 @@ This charm provides (service) from (service homepage). Add a description here of
 
 Step by step instructions on using the charm:
 
-    juju deploy servicename
+    juju deploy drupal
 
 and so on. If you're providing a web service or something that the end user needs to go to, tell them here, especially if you're deploying a service that might listen to a non-default port.
 
@@ -56,7 +56,7 @@ The configuration options will be listed on the charm store, however If you're m
 8. Click at this charm Deploy.
 9. Wait for the deploy to finish. The progress may be followed with:
 
-  `tail -f /var/log/juju-rodrigo-local/all-machines.log`
+  `tail -f /var/log/juju-[hostname]-local/all-machines.log`
 
 10. At this point the charm-drupal from sebas5384, at github, is successfully cloned.
 
@@ -73,7 +73,7 @@ The configuration options will be listed on the charm store, however If you're m
 
 13. To install Drupal run the following commnad:
 
-  `juju deploy --repository ~/charms-precise/charms local:precise/drupal`
+  `juju deploy --repository ~/charms local:precise/drupal`
 
 14. After the deploy is finished, at the JUJU dashboard, create the relation between Drupal and SQL.
 25. After the relation is finhished, access the Drupal IP throught your favorite browser, available by the JUJU status.
