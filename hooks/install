@@ -21,17 +21,19 @@ apt-get -y install php5-fpm php5-cli php5-gd php5-mysql php5-mcrypt php-pear php
 rsync -az /var/lib/php5 /mnt/ && rm -rf /var/lib/php5 && ln -s /mnt/php5 /var/lib/
 
 # PHP-FPM: Configure.
-juju-log "Download Perusio Confs and configure PHP-FPM via socket."
-git clone https://github.com/perusio/php-fpm-example-config -b unix /opt/php-fpm-example-config
-mv /etc/php5/fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf_default
-mv /etc/php5/fpm/php.ini /etc/php5/fpm/php.ini_default
-cp /opt/php-fpm-example-config/fpm/php5-fpm.conf /etc/php5/fpm/php-fpm.conf
-cp /opt/php-fpm-example-config/fpm/php.ini /etc/php5/fpm/
-cp -a /opt/php-fpm-example-config/fpm/pool.d /etc/php5/fpm/
-sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www.conf
-sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www0.conf
-sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www1.conf
-sed -i "s/^;listen.backlog/listen.backlog/" /opt/php-fpm-example-config/fpm/pool.d/www2.conf
+juju-log "Configure PHP-FPM via socket and some tweeks."
+# php.ini
+cp /etc/php5/fpm/php.ini /etc/php5/fpm/php.ini_bkp
+sed -i "s/^memory_limit = [1-9]*M/memory_limit = 512M/" /etc/php5/fpm/php.ini
+sed -i "s/^upload_max_filesize = [1-9]*M/upload_max_filesize = 10M/" /etc/php5/fpm/php.ini
+sed -i "s/^post_max_size = [1-9]*M/post_max_size = 10M/" /etc/php5/fpm/php.ini
+# pool.d/www.conf
+cp /etc/php5/fpm/pool.d/www.conf /etc/php5/fpm/pool.d/www.conf_bkp
+cp files/charm/php/pool.d/www.conf /etc/php5/fpm/pool.d/www.conf
+# php-fpm.conf
+cp /etc/php5/fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf_bkp
+cp files/charm/php/php-fpm.conf /etc/php5/fpm/php-fpm.conf
+
 
 # Nginx: install.
 juju-log "Download, compile and install Nginx with all the extra modules like Upload Progress."

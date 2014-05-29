@@ -1,6 +1,6 @@
 name: drupal
 summary: "Drupal is an open source content management platform"
-maintainer: Sebastian Ferrari <sebas5384@gmail.com>
+maintainer: Sebastian Ferrari <sebas@taller.net.br>
 description: |
   This charm will install and setup Drupal optimized to run in the cloud, using the Perusio Nginx and php-fpm configurations.
   Will place Ngnix and php-fpm configured to scale horizontally with Nginx's reverse proxy
