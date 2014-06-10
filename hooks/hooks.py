@@ -7,9 +7,8 @@ import charmhelpers.contrib.ansible
 # handled by default by running all sections of the playbook
 # tagged with the hook name.
 hooks = charmhelpers.contrib.ansible.AnsibleHooks(
-    playbook_path='playbooks/site.yaml',
+    playbook_path='site.yaml',
     default_hooks=['start', 'stop', 'config-changed'])
-
 
 @hooks.hook()
 def install():
@@ -19,6 +18,7 @@ def install():
     function finishes, any tasks in the playbook tagged with install are
     executed.
     """
+    config = charmhelpers.core.hookenv.config()
     charmhelpers.contrib.ansible.install_ansible_support(from_ppa=True)
 
 

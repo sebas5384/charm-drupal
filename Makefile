@@ -20,6 +20,9 @@ sync-charm-helpers: bin/charm_helpers_sync.py
 	@$(PYTHON) bin/charm_helpers_sync.py -c charm-helpers.yaml
 
 deploy:
-	@echo Deploying charm-bootstrap-ansible template.
-	@juju deploy --repository=../.. local:charm-bootstrap-ansible
+	@echo Deploying Drupal template.
+	@juju deploy --repository=../.. local:precise/drupal
 	@echo See the README for explorations after deploying.
+
+clear:
+	@juju destroy-service drupal

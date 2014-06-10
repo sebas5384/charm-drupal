@@ -1,3 +1,6 @@
 hooks/charmhelpers
 .coverage
 *.pyc
+.DS_Store
+*.swp
+*~

@@ -1,279 +1,829 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="96"
-   height="96"
-   id="svg6517"
-   version="1.1"
-   inkscape:version="0.48+devel r12274"
-   sodipodi:docname="Juju_charm_icon_template.svg">
-  <defs
-     id="defs6519">
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#Background"
-       id="linearGradient6461"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="970.29498"
-       x2="144"
-       y2="970.29498"
-       gradientTransform="matrix(0,-0.66666669,0.6660448,0,-866.25992,731.29077)" />
-    <linearGradient
-       id="Background">
-      <stop
-         id="stop4178"
-         offset="0"
-         style="stop-color:#b8b8b8;stop-opacity:1" />
-      <stop
-         id="stop4180"
-         offset="1"
-         style="stop-color:#c9c9c9;stop-opacity:1" />
-    </linearGradient>
-    <filter
-       style="color-interpolation-filters:sRGB;"
-       inkscape:label="Inner Shadow"
-       id="filter1121">
-      <feFlood
-         flood-opacity="0.59999999999999998"
-         flood-color="rgb(0,0,0)"
-         result="flood"
-         id="feFlood1123" />
-      <feComposite
-         in="flood"
-         in2="SourceGraphic"
-         operator="out"
-         result="composite1"
-         id="feComposite1125" />
-      <feGaussianBlur
-         in="composite1"
-         stdDeviation="1"
-         result="blur"
-         id="feGaussianBlur1127" />
-      <feOffset
-         dx="0"
-         dy="2"
-         result="offset"
-         id="feOffset1129" />
-      <feComposite
-         in="offset"
-         in2="SourceGraphic"
-         operator="atop"
-         result="composite2"
-         id="feComposite1131" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB;"
-       inkscape:label="Drop Shadow"
-       id="filter950">
-      <feFlood
-         flood-opacity="0.25"
-         flood-color="rgb(0,0,0)"
-         result="flood"
-         id="feFlood952" />
-      <feComposite
-         in="flood"
-         in2="SourceGraphic"
-         operator="in"
-         result="composite1"
-         id="feComposite954" />
-      <feGaussianBlur
-         in="composite1"
-         stdDeviation="1"
-         result="blur"
-         id="feGaussianBlur956" />
-      <feOffset
-         dx="0"
-         dy="1"
-         result="offset"
-         id="feOffset958" />
-      <feComposite
-         in="SourceGraphic"
-         in2="offset"
-         operator="over"
-         result="composite2"
-         id="feComposite960" />
-    </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath873">
-      <g
-         transform="matrix(0,-0.66666667,0.66604479,0,-258.25992,677.00001)"
-         id="g875"
-         inkscape:label="Layer 1"
-         style="fill:#ff00ff;fill-opacity:1;stroke:none;display:inline">
-        <path
-           style="fill:#ff00ff;fill-opacity:1;stroke:none;display:inline"
-           d="m 46.702703,898.22775 50.594594,0 C 138.16216,898.22775 144,904.06497 144,944.92583 l 0,50.73846 c 0,40.86071 -5.83784,46.69791 -46.702703,46.69791 l -50.594594,0 C 5.8378378,1042.3622 0,1036.525 0,995.66429 L 0,944.92583 C 0,904.06497 5.8378378,898.22775 46.702703,898.22775 Z"
-           id="path877"
-           inkscape:connector-curvature="0"
-           sodipodi:nodetypes="sssssssss" />
-      </g>
-    </clipPath>
-    <filter
-       inkscape:collect="always"
-       id="filter891"
-       inkscape:label="Badge Shadow">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.71999962"
-         id="feGaussianBlur893" />
-    </filter>
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="4.0745362"
-     inkscape:cx="18.514671"
-     inkscape:cy="49.018169"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="true"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1029"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     showborder="true"
-     showguides="true"
-     inkscape:guide-bbox="true"
-     inkscape:showpageshadow="false">
-    <inkscape:grid
-       type="xygrid"
-       id="grid821" />
-    <sodipodi:guide
-       orientation="1,0"
-       position="16,48"
-       id="guide823" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="64,80"
-       id="guide825" />
-    <sodipodi:guide
-       orientation="1,0"
-       position="80,40"
-       id="guide827" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="64,16"
-       id="guide829" />
-  </sodipodi:namedview>
-  <metadata
-     id="metadata6522">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="BACKGROUND"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(268,-635.29076)"
-     style="display:inline">
-    <path
-       style="fill:url(#linearGradient6461);fill-opacity:1;stroke:none;display:inline;filter:url(#filter1121)"
-       d="m -268,700.15563 0,-33.72973 c 0,-27.24324 3.88785,-31.13513 31.10302,-31.13513 l 33.79408,0 c 27.21507,0 31.1029,3.89189 31.1029,31.13513 l 0,33.72973 c 0,27.24325 -3.88783,31.13514 -31.1029,31.13514 l -33.79408,0 C -264.11215,731.29077 -268,727.39888 -268,700.15563 Z"
-       id="path6455"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssssssss" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="PLACE YOUR PICTOGRAM HERE"
-     style="display:inline" />
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="BADGE"
-     style="display:none"
-     sodipodi:insensitive="true">
-    <g
-       style="display:inline"
-       transform="translate(-340.00001,-581)"
-       id="g4394"
-       clip-path="none">
-      <g
-         id="g855">
-        <g
-           inkscape:groupmode="maskhelper"
-           id="g870"
-           clip-path="url(#clipPath873)"
-           style="opacity:0.6;filter:url(#filter891)">
-          <path
-             transform="matrix(1.4999992,0,0,1.4999992,-29.999795,-237.54282)"
-             d="m 264,552.36218 a 12,12 0 1 1 -24,0 A 12,12 0 1 1 264,552.36218 Z"
-             sodipodi:ry="12"
-             sodipodi:rx="12"
-             sodipodi:cy="552.36218"
-             sodipodi:cx="252"
-             id="path844"
-             style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-             sodipodi:type="arc" />
-        </g>
-        <g
-           id="g862">
-          <path
-             sodipodi:type="arc"
-             style="color:#000000;fill:#f5f5f5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-             id="path4398"
-             sodipodi:cx="252"
-             sodipodi:cy="552.36218"
-             sodipodi:rx="12"
-             sodipodi:ry="12"
-             d="m 264,552.36218 a 12,12 0 1 1 -24,0 A 12,12 0 1 1 264,552.36218 Z"
-             transform="matrix(1.4999992,0,0,1.4999992,-29.999795,-238.54282)" />
-          <path
-             transform="matrix(1.25,0,0,1.25,33,-100.45273)"
-             d="m 264,552.36218 a 12,12 0 1 1 -24,0 A 12,12 0 1 1 264,552.36218 Z"
-             sodipodi:ry="12"
-             sodipodi:rx="12"
-             sodipodi:cy="552.36218"
-             sodipodi:cx="252"
-             id="path4400"
-             style="color:#000000;fill:#dd4814;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-             sodipodi:type="arc" />
-          <path
-             sodipodi:type="star"
-             style="color:#000000;fill:#f5f5f5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-             id="path4459"
-             sodipodi:sides="5"
-             sodipodi:cx="666.19574"
-             sodipodi:cy="589.50385"
-             sodipodi:r1="7.2431178"
-             sodipodi:r2="4.3458705"
-             sodipodi:arg1="1.0471976"
-             sodipodi:arg2="1.6755161"
-             inkscape:flatsided="false"
-             inkscape:rounded="0.1"
-             inkscape:randomized="0"
-             d="m 669.8173,595.77657 c -0.39132,0.22593 -3.62645,-1.90343 -4.07583,-1.95066 -0.44938,-0.0472 -4.05653,1.36297 -4.39232,1.06062 -0.3358,-0.30235 0.68963,-4.03715 0.59569,-4.47913 -0.0939,-0.44198 -2.5498,-3.43681 -2.36602,-3.8496 0.18379,-0.41279 4.05267,-0.59166 4.44398,-0.81759 0.39132,-0.22593 2.48067,-3.48704 2.93005,-3.4398 0.44938,0.0472 1.81505,3.67147 2.15084,3.97382 0.3358,0.30236 4.08294,1.2817 4.17689,1.72369 0.0939,0.44198 -2.9309,2.86076 -3.11469,3.27355 C 669.9821,591.68426 670.20862,595.55064 669.8173,595.77657 Z"
-             transform="matrix(1.511423,-0.16366377,0.16366377,1.511423,-755.37346,-191.93651)" />
-        </g>
-      </g>
-    </g>
-  </g>
-</svg>
+
+
+
+
+<!DOCTYPE html>
+<html class="   ">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <title>charm-drupal/icon.svg at bash · sebas5384/charm-drupal · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" />
+    <meta property="fb:app_id" content="1401488693436528"/>
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="sebas5384/charm-drupal" name="twitter:title" /><meta content="charm-drupal - Drupal Juju Charm - Bash and Ansible" name="twitter:description" /><meta content="https://avatars3.githubusercontent.com/u/97021?s=400" name="twitter:image:src" />
+<meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars3.githubusercontent.com/u/97021?s=400" property="og:image" /><meta content="sebas5384/charm-drupal" property="og:title" /><meta content="https://github.com/sebas5384/charm-drupal" property="og:url" /><meta content="charm-drupal - Drupal Juju Charm - Bash and Ansible" property="og:description" />
+
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="selected-link" value="repo_source" data-pjax-transient />
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector-new.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="B3D8A2ED:4C63:2BFAFED:539693BB" name="octolytics-dimension-request_id" />
+    
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico" />
+
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="+DATQy3/X9blmSGy9epSHAX5aT79zD1TlgC7P4MLDClybvoCYKYqbdLHo7fvMNen4MyFek88QLlFx2YPUktJSg==" name="csrf-token" />
+
+    <link href="https://assets-cdn.github.com/assets/github-1aeb426322c64c12b92d56bda5b110fc1093f75e.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://assets-cdn.github.com/assets/github2-b2cccfcac1a522b6ce675606f61388d36bf2c080.css" media="all" rel="stylesheet" type="text/css" />
+    
+
+
+    <meta http-equiv="x-pjax-version" content="fdaba147338e2f71f6dadeadf7941995">
+
+      
+  <meta name="description" content="charm-drupal - Drupal Juju Charm - Bash and Ansible" />
+
+  <meta content="97021" name="octolytics-dimension-user_id" /><meta content="sebas5384" name="octolytics-dimension-user_login" /><meta content="17853135" name="octolytics-dimension-repository_id" /><meta content="sebas5384/charm-drupal" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="17853135" name="octolytics-dimension-repository_network_root_id" /><meta content="sebas5384/charm-drupal" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/sebas5384/charm-drupal/commits/bash.atom" rel="alternate" title="Recent Commits to charm-drupal:bash" type="application/atom+xml" />
+
+  </head>
+
+
+  <body class="logged_out  env-production  vis-public page-blob">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      
+      <div class="header header-logged-out">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions">
+        <a class="button primary" href="/join">Sign up</a>
+      <a class="button signin" href="/login?return_to=%2Fsebas5384%2Fcharm-drupal%2Fblob%2Fbash%2Ficon.svg">Sign in</a>
+    </div>
+
+    <div class="command-bar js-command-bar  in-repository">
+
+      <ul class="top-nav">
+          <li class="explore"><a href="/explore">Explore</a></li>
+        <li class="features"><a href="/features">Features</a></li>
+          <li class="enterprise"><a href="https://enterprise.github.com/">Enterprise</a></li>
+          <li class="blog"><a href="/blog">Blog</a></li>
+      </ul>
+        <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<div class="commandbar">
+  <span class="message"></span>
+  <input type="text" data-hotkey="s, /" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off"
+    
+    
+      data-repo="sebas5384/charm-drupal"
+      data-branch="bash"
+      data-sha="6a3e1500000c848832dc8ab9598558cab2ebaca7"
+  >
+  <div class="display hidden"></div>
+</div>
+
+    <input type="hidden" name="nwo" value="sebas5384/charm-drupal" />
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target" role="button" aria-haspopup="true">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container" aria-hidden="true">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked" />
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global" />
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="help tooltipped tooltipped-s" aria-label="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+    </div>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+
+  <li>
+    <a href="/login?return_to=%2Fsebas5384%2Fcharm-drupal"
+    class="minibutton with-count star-button tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>Star
+  </a>
+
+    <a class="social-count js-social-count" href="/sebas5384/charm-drupal/stargazers">
+      4
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Fsebas5384%2Fcharm-drupal"
+        class="minibutton with-count js-toggler-target fork-button tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>Fork
+      </a>
+      <a href="/sebas5384/charm-drupal/network" class="social-count">
+        1
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="/sebas5384" class="url fn" itemprop="url" rel="author"><span itemprop="title">sebas5384</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="/sebas5384/charm-drupal" class="js-current-repository js-repo-home-link">charm-drupal</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline js-new-discussion-timeline  ">
+        <div class="repository-sidebar clearfix">
+            
+
+<div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders">
+  <div class="sunken-menu-contents">
+    <ul class="sunken-menu-group">
+      <li class="tooltipped tooltipped-w" aria-label="Code">
+        <a href="/sebas5384/charm-drupal/tree/bash" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /sebas5384/charm-drupal/tree/bash">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+        <li class="tooltipped tooltipped-w" aria-label="Issues">
+          <a href="/sebas5384/charm-drupal/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g i" data-selected-links="repo_issues /sebas5384/charm-drupal/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class='counter'>13</span>
+            <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>        </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Pull Requests">
+        <a href="/sebas5384/charm-drupal/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g p" data-selected-links="repo_pulls /sebas5384/charm-drupal/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class='counter'>0</span>
+            <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+
+    </ul>
+    <div class="sunken-menu-separator"></div>
+    <ul class="sunken-menu-group">
+
+      <li class="tooltipped tooltipped-w" aria-label="Pulse">
+        <a href="/sebas5384/charm-drupal/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="pulse /sebas5384/charm-drupal/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Graphs">
+        <a href="/sebas5384/charm-drupal/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /sebas5384/charm-drupal/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Network">
+        <a href="/sebas5384/charm-drupal/network" aria-label="Network" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-selected-links="repo_network /sebas5384/charm-drupal/network">
+          <span class="octicon octicon-repo-forked"></span> <span class="full-word">Network</span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+    </ul>
+
+
+  </div>
+</div>
+
+              <div class="only-with-full-nav">
+                
+
+  
+
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field"
+           value="https://github.com/sebas5384/charm-drupal.git" readonly="readonly">
+    <span class="url-box-clippy">
+    <button aria-label="copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="https://github.com/sebas5384/charm-drupal.git" data-copied-hint="copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field"
+           value="https://github.com/sebas5384/charm-drupal" readonly="readonly">
+    <span class="url-box-clippy">
+    <button aria-label="copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="https://github.com/sebas5384/charm-drupal" data-copied-hint="copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>
+      or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <span class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <a href="https://help.github.com/articles/which-remote-url-should-i-use">
+    <span class="octicon octicon-question"></span>
+    </a>
+  </span>
+</p>
+
+
+
+                <a href="/sebas5384/charm-drupal/archive/bash.zip"
+                   class="minibutton sidebar-button"
+                   aria-label="Download sebas5384/charm-drupal as a zip file"
+                   title="Download sebas5384/charm-drupal as a zip file"
+                   rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+          
+
+
+<a href="/sebas5384/charm-drupal/blob/5c2b25c293a21e2c5f45b05574637b68b8a928e7/icon.svg" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+<!-- blob contrib key: blob_contributors:v21:4f75beaa338d8ebaac7884e558a88c6b -->
+
+<p title="This is a placeholder element" class="js-history-link-replace hidden"></p>
+
+<a href="/sebas5384/charm-drupal/find/bash" data-pjax data-hotkey="t" class="js-show-file-finder" style="display:none">Show File Finder</a>
+
+<div class="file-navigation">
+  
+
+<div class="select-menu js-menu-container js-select-menu" >
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="bash"
+    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">bash</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/sebas5384/charm-drupal/blob/bash/icon.svg"
+                 data-name="bash"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="bash">bash</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/sebas5384/charm-drupal/blob/master/icon.svg"
+                 data-name="master"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/sebas5384/charm-drupal/tree/bash-0.5/icon.svg"
+                 data-name="bash-0.5"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target"
+                 title="bash-0.5">bash-0.5</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+  <div class="breadcrumb">
+    <span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/sebas5384/charm-drupal/tree/bash" data-branch="bash" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">charm-drupal</span></a></span></span><span class="separator"> / </span><strong class="final-path">icon.svg</strong> <button aria-label="copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="icon.svg" data-copied-hint="copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+  </div>
+</div>
+
+
+  <div class="commit commit-loader file-history-tease js-deferred-content" data-url="/sebas5384/charm-drupal/contributors/bash/icon.svg">
+    Fetching contributors…
+
+    <div class="participation">
+      <p class="loader-loading"><img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" /></p>
+      <p class="loader-error">Cannot retrieve contributors at this time</p>
+    </div>
+  </div>
+
+<div class="file-box">
+  <div class="file">
+    <div class="meta clearfix">
+      <div class="info file-name">
+        <span class="icon"><b class="octicon octicon-file-text"></b></span>
+        <span class="mode" title="File Mode">executable file</span>
+        <span class="meta-divider"></span>
+          <span>287 lines (285 sloc)</span>
+          <span class="meta-divider"></span>
+        <span>12.057 kb</span>
+      </div>
+      <div class="actions">
+        <div class="button-group">
+              <a class="minibutton disabled tooltipped tooltipped-w" href="#"
+                 aria-label="You must be signed in to make or propose changes">Edit</a>
+          <a href="/sebas5384/charm-drupal/raw/bash/icon.svg" class="button minibutton " id="raw-url">Raw</a>
+            <a href="/sebas5384/charm-drupal/blame/bash/icon.svg" class="button minibutton js-update-url-with-hash">Blame</a>
+          <a href="/sebas5384/charm-drupal/commits/bash/icon.svg" class="button minibutton " rel="nofollow">History</a>
+        </div><!-- /.button-group -->
+          <a class="minibutton danger disabled empty-icon tooltipped tooltipped-w" href="#"
+             aria-label="You must be signed in to make or propose changes">
+          Delete
+        </a>
+      </div><!-- /.actions -->
+    </div>
+      
+  <div class="blob-wrapper data type-xml js-blob-data">
+       <table class="file-code file-diff tab-size-8">
+         <tr class="file-code-line">
+           <td class="blob-line-nums">
+             <span id="L1" rel="#L1">1</span>
+<span id="L2" rel="#L2">2</span>
+<span id="L3" rel="#L3">3</span>
+<span id="L4" rel="#L4">4</span>
+<span id="L5" rel="#L5">5</span>
+<span id="L6" rel="#L6">6</span>
+<span id="L7" rel="#L7">7</span>
+<span id="L8" rel="#L8">8</span>
+<span id="L9" rel="#L9">9</span>
+<span id="L10" rel="#L10">10</span>
+<span id="L11" rel="#L11">11</span>
+<span id="L12" rel="#L12">12</span>
+<span id="L13" rel="#L13">13</span>
+<span id="L14" rel="#L14">14</span>
+<span id="L15" rel="#L15">15</span>
+<span id="L16" rel="#L16">16</span>
+<span id="L17" rel="#L17">17</span>
+<span id="L18" rel="#L18">18</span>
+<span id="L19" rel="#L19">19</span>
+<span id="L20" rel="#L20">20</span>
+<span id="L21" rel="#L21">21</span>
+<span id="L22" rel="#L22">22</span>
+<span id="L23" rel="#L23">23</span>
+<span id="L24" rel="#L24">24</span>
+<span id="L25" rel="#L25">25</span>
+<span id="L26" rel="#L26">26</span>
+<span id="L27" rel="#L27">27</span>
+<span id="L28" rel="#L28">28</span>
+<span id="L29" rel="#L29">29</span>
+<span id="L30" rel="#L30">30</span>
+<span id="L31" rel="#L31">31</span>
+<span id="L32" rel="#L32">32</span>
+<span id="L33" rel="#L33">33</span>
+<span id="L34" rel="#L34">34</span>
+<span id="L35" rel="#L35">35</span>
+<span id="L36" rel="#L36">36</span>
+<span id="L37" rel="#L37">37</span>
+<span id="L38" rel="#L38">38</span>
+<span id="L39" rel="#L39">39</span>
+<span id="L40" rel="#L40">40</span>
+<span id="L41" rel="#L41">41</span>
+<span id="L42" rel="#L42">42</span>
+<span id="L43" rel="#L43">43</span>
+<span id="L44" rel="#L44">44</span>
+<span id="L45" rel="#L45">45</span>
+<span id="L46" rel="#L46">46</span>
+<span id="L47" rel="#L47">47</span>
+<span id="L48" rel="#L48">48</span>
+<span id="L49" rel="#L49">49</span>
+<span id="L50" rel="#L50">50</span>
+<span id="L51" rel="#L51">51</span>
+<span id="L52" rel="#L52">52</span>
+<span id="L53" rel="#L53">53</span>
+<span id="L54" rel="#L54">54</span>
+<span id="L55" rel="#L55">55</span>
+<span id="L56" rel="#L56">56</span>
+<span id="L57" rel="#L57">57</span>
+<span id="L58" rel="#L58">58</span>
+<span id="L59" rel="#L59">59</span>
+<span id="L60" rel="#L60">60</span>
+<span id="L61" rel="#L61">61</span>
+<span id="L62" rel="#L62">62</span>
+<span id="L63" rel="#L63">63</span>
+<span id="L64" rel="#L64">64</span>
+<span id="L65" rel="#L65">65</span>
+<span id="L66" rel="#L66">66</span>
+<span id="L67" rel="#L67">67</span>
+<span id="L68" rel="#L68">68</span>
+<span id="L69" rel="#L69">69</span>
+<span id="L70" rel="#L70">70</span>
+<span id="L71" rel="#L71">71</span>
+<span id="L72" rel="#L72">72</span>
+<span id="L73" rel="#L73">73</span>
+<span id="L74" rel="#L74">74</span>
+<span id="L75" rel="#L75">75</span>
+<span id="L76" rel="#L76">76</span>
+<span id="L77" rel="#L77">77</span>
+<span id="L78" rel="#L78">78</span>
+<span id="L79" rel="#L79">79</span>
+<span id="L80" rel="#L80">80</span>
+<span id="L81" rel="#L81">81</span>
+<span id="L82" rel="#L82">82</span>
+<span id="L83" rel="#L83">83</span>
+<span id="L84" rel="#L84">84</span>
+<span id="L85" rel="#L85">85</span>
+<span id="L86" rel="#L86">86</span>
+<span id="L87" rel="#L87">87</span>
+<span id="L88" rel="#L88">88</span>
+<span id="L89" rel="#L89">89</span>
+<span id="L90" rel="#L90">90</span>
+<span id="L91" rel="#L91">91</span>
+<span id="L92" rel="#L92">92</span>
+<span id="L93" rel="#L93">93</span>
+<span id="L94" rel="#L94">94</span>
+<span id="L95" rel="#L95">95</span>
+<span id="L96" rel="#L96">96</span>
+<span id="L97" rel="#L97">97</span>
+<span id="L98" rel="#L98">98</span>
+<span id="L99" rel="#L99">99</span>
+<span id="L100" rel="#L100">100</span>
+<span id="L101" rel="#L101">101</span>
+<span id="L102" rel="#L102">102</span>
+<span id="L103" rel="#L103">103</span>
+<span id="L104" rel="#L104">104</span>
+<span id="L105" rel="#L105">105</span>
+<span id="L106" rel="#L106">106</span>
+<span id="L107" rel="#L107">107</span>
+<span id="L108" rel="#L108">108</span>
+<span id="L109" rel="#L109">109</span>
+<span id="L110" rel="#L110">110</span>
+<span id="L111" rel="#L111">111</span>
+<span id="L112" rel="#L112">112</span>
+<span id="L113" rel="#L113">113</span>
+<span id="L114" rel="#L114">114</span>
+<span id="L115" rel="#L115">115</span>
+<span id="L116" rel="#L116">116</span>
+<span id="L117" rel="#L117">117</span>
+<span id="L118" rel="#L118">118</span>
+<span id="L119" rel="#L119">119</span>
+<span id="L120" rel="#L120">120</span>
+<span id="L121" rel="#L121">121</span>
+<span id="L122" rel="#L122">122</span>
+<span id="L123" rel="#L123">123</span>
+<span id="L124" rel="#L124">124</span>
+<span id="L125" rel="#L125">125</span>
+<span id="L126" rel="#L126">126</span>
+<span id="L127" rel="#L127">127</span>
+<span id="L128" rel="#L128">128</span>
+<span id="L129" rel="#L129">129</span>
+<span id="L130" rel="#L130">130</span>
+<span id="L131" rel="#L131">131</span>
+<span id="L132" rel="#L132">132</span>
+<span id="L133" rel="#L133">133</span>
+<span id="L134" rel="#L134">134</span>
+<span id="L135" rel="#L135">135</span>
+<span id="L136" rel="#L136">136</span>
+<span id="L137" rel="#L137">137</span>
+<span id="L138" rel="#L138">138</span>
+<span id="L139" rel="#L139">139</span>
+<span id="L140" rel="#L140">140</span>
+<span id="L141" rel="#L141">141</span>
+<span id="L142" rel="#L142">142</span>
+<span id="L143" rel="#L143">143</span>
+<span id="L144" rel="#L144">144</span>
+<span id="L145" rel="#L145">145</span>
+<span id="L146" rel="#L146">146</span>
+<span id="L147" rel="#L147">147</span>
+<span id="L148" rel="#L148">148</span>
+<span id="L149" rel="#L149">149</span>
+<span id="L150" rel="#L150">150</span>
+<span id="L151" rel="#L151">151</span>
+<span id="L152" rel="#L152">152</span>
+<span id="L153" rel="#L153">153</span>
+<span id="L154" rel="#L154">154</span>
+<span id="L155" rel="#L155">155</span>
+<span id="L156" rel="#L156">156</span>
+<span id="L157" rel="#L157">157</span>
+<span id="L158" rel="#L158">158</span>
+<span id="L159" rel="#L159">159</span>
+<span id="L160" rel="#L160">160</span>
+<span id="L161" rel="#L161">161</span>
+<span id="L162" rel="#L162">162</span>
+<span id="L163" rel="#L163">163</span>
+<span id="L164" rel="#L164">164</span>
+<span id="L165" rel="#L165">165</span>
+<span id="L166" rel="#L166">166</span>
+<span id="L167" rel="#L167">167</span>
+<span id="L168" rel="#L168">168</span>
+<span id="L169" rel="#L169">169</span>
+<span id="L170" rel="#L170">170</span>
+<span id="L171" rel="#L171">171</span>
+<span id="L172" rel="#L172">172</span>
+<span id="L173" rel="#L173">173</span>
+<span id="L174" rel="#L174">174</span>
+<span id="L175" rel="#L175">175</span>
+<span id="L176" rel="#L176">176</span>
+<span id="L177" rel="#L177">177</span>
+<span id="L178" rel="#L178">178</span>
+<span id="L179" rel="#L179">179</span>
+<span id="L180" rel="#L180">180</span>
+<span id="L181" rel="#L181">181</span>
+<span id="L182" rel="#L182">182</span>
+<span id="L183" rel="#L183">183</span>
+<span id="L184" rel="#L184">184</span>
+<span id="L185" rel="#L185">185</span>
+<span id="L186" rel="#L186">186</span>
+<span id="L187" rel="#L187">187</span>
+<span id="L188" rel="#L188">188</span>
+<span id="L189" rel="#L189">189</span>
+<span id="L190" rel="#L190">190</span>
+<span id="L191" rel="#L191">191</span>
+<span id="L192" rel="#L192">192</span>
+<span id="L193" rel="#L193">193</span>
+<span id="L194" rel="#L194">194</span>
+<span id="L195" rel="#L195">195</span>
+<span id="L196" rel="#L196">196</span>
+<span id="L197" rel="#L197">197</span>
+<span id="L198" rel="#L198">198</span>
+<span id="L199" rel="#L199">199</span>
+<span id="L200" rel="#L200">200</span>
+<span id="L201" rel="#L201">201</span>
+<span id="L202" rel="#L202">202</span>
+<span id="L203" rel="#L203">203</span>
+<span id="L204" rel="#L204">204</span>
+<span id="L205" rel="#L205">205</span>
+<span id="L206" rel="#L206">206</span>
+<span id="L207" rel="#L207">207</span>
+<span id="L208" rel="#L208">208</span>
+<span id="L209" rel="#L209">209</span>
+<span id="L210" rel="#L210">210</span>
+<span id="L211" rel="#L211">211</span>
+<span id="L212" rel="#L212">212</span>
+<span id="L213" rel="#L213">213</span>
+<span id="L214" rel="#L214">214</span>
+<span id="L215" rel="#L215">215</span>
+<span id="L216" rel="#L216">216</span>
+<span id="L217" rel="#L217">217</span>
+<span id="L218" rel="#L218">218</span>
+<span id="L219" rel="#L219">219</span>
+<span id="L220" rel="#L220">220</span>
+<span id="L221" rel="#L221">221</span>
+<span id="L222" rel="#L222">222</span>
+<span id="L223" rel="#L223">223</span>
+<span id="L224" rel="#L224">224</span>
+<span id="L225" rel="#L225">225</span>
+<span id="L226" rel="#L226">226</span>
+<span id="L227" rel="#L227">227</span>
+<span id="L228" rel="#L228">228</span>
+<span id="L229" rel="#L229">229</span>
+<span id="L230" rel="#L230">230</span>
+<span id="L231" rel="#L231">231</span>
+<span id="L232" rel="#L232">232</span>
+<span id="L233" rel="#L233">233</span>
+<span id="L234" rel="#L234">234</span>
+<span id="L235" rel="#L235">235</span>
+<span id="L236" rel="#L236">236</span>
+<span id="L237" rel="#L237">237</span>
+<span id="L238" rel="#L238">238</span>
+<span id="L239" rel="#L239">239</span>
+<span id="L240" rel="#L240">240</span>
+<span id="L241" rel="#L241">241</span>
+<span id="L242" rel="#L242">242</span>
+<span id="L243" rel="#L243">243</span>
+<span id="L244" rel="#L244">244</span>
+<span id="L245" rel="#L245">245</span>
+<span id="L246" rel="#L246">246</span>
+<span id="L247" rel="#L247">247</span>
+<span id="L248" rel="#L248">248</span>
+<span id="L249" rel="#L249">249</span>
+<span id="L250" rel="#L250">250</span>
+<span id="L251" rel="#L251">251</span>
+<span id="L252" rel="#L252">252</span>
+<span id="L253" rel="#L253">253</span>
+<span id="L254" rel="#L254">254</span>
+<span id="L255" rel="#L255">255</span>
+<span id="L256" rel="#L256">256</span>
+<span id="L257" rel="#L257">257</span>
+<span id="L258" rel="#L258">258</span>
+<span id="L259" rel="#L259">259</span>
+<span id="L260" rel="#L260">260</span>
+<span id="L261" rel="#L261">261</span>
+<span id="L262" rel="#L262">262</span>
+<span id="L263" rel="#L263">263</span>
+<span id="L264" rel="#L264">264</span>
+<span id="L265" rel="#L265">265</span>
+<span id="L266" rel="#L266">266</span>
+<span id="L267" rel="#L267">267</span>
+<span id="L268" rel="#L268">268</span>
+<span id="L269" rel="#L269">269</span>
+<span id="L270" rel="#L270">270</span>
+<span id="L271" rel="#L271">271</span>
+<span id="L272" rel="#L272">272</span>
+<span id="L273" rel="#L273">273</span>
+<span id="L274" rel="#L274">274</span>
+<span id="L275" rel="#L275">275</span>
+<span id="L276" rel="#L276">276</span>
+<span id="L277" rel="#L277">277</span>
+<span id="L278" rel="#L278">278</span>
+<span id="L279" rel="#L279">279</span>
+<span id="L280" rel="#L280">280</span>
+<span id="L281" rel="#L281">281</span>
+<span id="L282" rel="#L282">282</span>
+<span id="L283" rel="#L283">283</span>
+<span id="L284" rel="#L284">284</span>
+<span id="L285" rel="#L285">285</span>
+<span id="L286" rel="#L286">286</span>
+
+           </td>
+           <td class="blob-line-code"><div class="code-body highlight"><pre><div class='line' id='LC1'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span></div><div class='line' id='LC2'><span class="c">&lt;!-- Created with Inkscape (http://www.inkscape.org/) --&gt;</span></div><div class='line' id='LC3'><br/></div><div class='line' id='LC4'><span class="nt">&lt;svg</span></div><div class='line' id='LC5'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:dc=</span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span></div><div class='line' id='LC6'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:cc=</span><span class="s">&quot;http://creativecommons.org/ns#&quot;</span></div><div class='line' id='LC7'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:rdf=</span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></div><div class='line' id='LC8'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:svg=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span></div><div class='line' id='LC9'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span></div><div class='line' id='LC10'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span></div><div class='line' id='LC11'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:sodipodi=</span><span class="s">&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;</span></div><div class='line' id='LC12'>&nbsp;&nbsp;&nbsp;<span class="na">xmlns:inkscape=</span><span class="s">&quot;http://www.inkscape.org/namespaces/inkscape&quot;</span></div><div class='line' id='LC13'>&nbsp;&nbsp;&nbsp;<span class="na">width=</span><span class="s">&quot;96&quot;</span></div><div class='line' id='LC14'>&nbsp;&nbsp;&nbsp;<span class="na">height=</span><span class="s">&quot;96&quot;</span></div><div class='line' id='LC15'>&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;svg6517&quot;</span></div><div class='line' id='LC16'>&nbsp;&nbsp;&nbsp;<span class="na">version=</span><span class="s">&quot;1.1&quot;</span></div><div class='line' id='LC17'>&nbsp;&nbsp;&nbsp;<span class="na">inkscape:version=</span><span class="s">&quot;0.48.2 r9819&quot;</span></div><div class='line' id='LC18'>&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:docname=</span><span class="s">&quot;icon.svg&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC19'>&nbsp;&nbsp;<span class="nt">&lt;defs</span></div><div class='line' id='LC20'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;defs6519&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC21'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;linearGradient</span></div><div class='line' id='LC22'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:collect=</span><span class="s">&quot;always&quot;</span></div><div class='line' id='LC23'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">xlink:href=</span><span class="s">&quot;#Background&quot;</span></div><div class='line' id='LC24'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;linearGradient6461&quot;</span></div><div class='line' id='LC25'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">gradientUnits=</span><span class="s">&quot;userSpaceOnUse&quot;</span></div><div class='line' id='LC26'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">x1=</span><span class="s">&quot;1.5e-05&quot;</span></div><div class='line' id='LC27'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">y1=</span><span class="s">&quot;970.29498&quot;</span></div><div class='line' id='LC28'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">x2=</span><span class="s">&quot;144.1534&quot;</span></div><div class='line' id='LC29'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">y2=</span><span class="s">&quot;970.29498&quot;</span></div><div class='line' id='LC30'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">gradientTransform=</span><span class="s">&quot;matrix(0,-0.66666669,0.6660448,0,-866.25992,731.29077)&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC31'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;linearGradient</span></div><div class='line' id='LC32'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;Background&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC33'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;stop</span></div><div class='line' id='LC34'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;stop4178&quot;</span></div><div class='line' id='LC35'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">offset=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC36'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;stop-color:#457fca;stop-opacity:1&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC37'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;stop</span></div><div class='line' id='LC38'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;stop4180&quot;</span></div><div class='line' id='LC39'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">offset=</span><span class="s">&quot;1&quot;</span></div><div class='line' id='LC40'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;stop-color:#81a5d3;stop-opacity:1&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC41'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/linearGradient&gt;</span></div><div class='line' id='LC42'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;filter</span></div><div class='line' id='LC43'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;color-interpolation-filters:sRGB;&quot;</span></div><div class='line' id='LC44'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;Inner Shadow&quot;</span></div><div class='line' id='LC45'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;filter1121&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC46'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feFlood</span></div><div class='line' id='LC47'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">flood-opacity=</span><span class="s">&quot;0.59999999999999998&quot;</span></div><div class='line' id='LC48'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">flood-color=</span><span class="s">&quot;rgb(0,0,0)&quot;</span></div><div class='line' id='LC49'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;flood&quot;</span></div><div class='line' id='LC50'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feFlood1123&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC51'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feComposite</span></div><div class='line' id='LC52'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in=</span><span class="s">&quot;flood&quot;</span></div><div class='line' id='LC53'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in2=</span><span class="s">&quot;SourceGraphic&quot;</span></div><div class='line' id='LC54'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">operator=</span><span class="s">&quot;out&quot;</span></div><div class='line' id='LC55'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;composite1&quot;</span></div><div class='line' id='LC56'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feComposite1125&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC57'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feGaussianBlur</span></div><div class='line' id='LC58'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in=</span><span class="s">&quot;composite1&quot;</span></div><div class='line' id='LC59'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">stdDeviation=</span><span class="s">&quot;1&quot;</span></div><div class='line' id='LC60'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;blur&quot;</span></div><div class='line' id='LC61'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feGaussianBlur1127&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC62'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feOffset</span></div><div class='line' id='LC63'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">dx=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC64'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">dy=</span><span class="s">&quot;2&quot;</span></div><div class='line' id='LC65'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;offset&quot;</span></div><div class='line' id='LC66'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feOffset1129&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC67'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feComposite</span></div><div class='line' id='LC68'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in=</span><span class="s">&quot;offset&quot;</span></div><div class='line' id='LC69'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in2=</span><span class="s">&quot;SourceGraphic&quot;</span></div><div class='line' id='LC70'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">operator=</span><span class="s">&quot;atop&quot;</span></div><div class='line' id='LC71'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;composite2&quot;</span></div><div class='line' id='LC72'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feComposite1131&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC73'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/filter&gt;</span></div><div class='line' id='LC74'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;filter</span></div><div class='line' id='LC75'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;color-interpolation-filters:sRGB;&quot;</span></div><div class='line' id='LC76'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;Drop Shadow&quot;</span></div><div class='line' id='LC77'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;filter950&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC78'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feFlood</span></div><div class='line' id='LC79'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">flood-opacity=</span><span class="s">&quot;0.25&quot;</span></div><div class='line' id='LC80'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">flood-color=</span><span class="s">&quot;rgb(0,0,0)&quot;</span></div><div class='line' id='LC81'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;flood&quot;</span></div><div class='line' id='LC82'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feFlood952&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC83'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feComposite</span></div><div class='line' id='LC84'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in=</span><span class="s">&quot;flood&quot;</span></div><div class='line' id='LC85'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in2=</span><span class="s">&quot;SourceGraphic&quot;</span></div><div class='line' id='LC86'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">operator=</span><span class="s">&quot;in&quot;</span></div><div class='line' id='LC87'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;composite1&quot;</span></div><div class='line' id='LC88'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feComposite954&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC89'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feGaussianBlur</span></div><div class='line' id='LC90'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in=</span><span class="s">&quot;composite1&quot;</span></div><div class='line' id='LC91'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">stdDeviation=</span><span class="s">&quot;1&quot;</span></div><div class='line' id='LC92'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;blur&quot;</span></div><div class='line' id='LC93'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feGaussianBlur956&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC94'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feOffset</span></div><div class='line' id='LC95'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">dx=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC96'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">dy=</span><span class="s">&quot;1&quot;</span></div><div class='line' id='LC97'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;offset&quot;</span></div><div class='line' id='LC98'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feOffset958&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC99'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feComposite</span></div><div class='line' id='LC100'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in=</span><span class="s">&quot;SourceGraphic&quot;</span></div><div class='line' id='LC101'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">in2=</span><span class="s">&quot;offset&quot;</span></div><div class='line' id='LC102'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">operator=</span><span class="s">&quot;over&quot;</span></div><div class='line' id='LC103'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">result=</span><span class="s">&quot;composite2&quot;</span></div><div class='line' id='LC104'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feComposite960&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC105'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/filter&gt;</span></div><div class='line' id='LC106'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;clipPath</span></div><div class='line' id='LC107'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">clipPathUnits=</span><span class="s">&quot;userSpaceOnUse&quot;</span></div><div class='line' id='LC108'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;clipPath873&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC109'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC110'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;matrix(0,-0.66666667,0.66604479,0,-258.25992,677.00001)&quot;</span></div><div class='line' id='LC111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;g875&quot;</span></div><div class='line' id='LC112'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;Layer 1&quot;</span></div><div class='line' id='LC113'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;fill:#ff00ff;fill-opacity:1;stroke:none;display:inline&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC114'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC115'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;fill:#ff00ff;fill-opacity:1;stroke:none;display:inline&quot;</span></div><div class='line' id='LC116'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;m 46.702703,898.22775 50.594594,0 C 138.16216,898.22775 144,904.06497 144,944.92583 l 0,50.73846 c 0,40.86071 -5.83784,46.69791 -46.702703,46.69791 l -50.594594,0 C 5.8378378,1042.3622 0,1036.525 0,995.66429 L 0,944.92583 C 0,904.06497 5.8378378,898.22775 46.702703,898.22775 Z&quot;</span></div><div class='line' id='LC117'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;path877&quot;</span></div><div class='line' id='LC118'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:connector-curvature=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC119'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:nodetypes=</span><span class="s">&quot;sssssssss&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC120'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC121'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/clipPath&gt;</span></div><div class='line' id='LC122'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;filter</span></div><div class='line' id='LC123'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:collect=</span><span class="s">&quot;always&quot;</span></div><div class='line' id='LC124'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;filter891&quot;</span></div><div class='line' id='LC125'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;Badge Shadow&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC126'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;feGaussianBlur</span></div><div class='line' id='LC127'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:collect=</span><span class="s">&quot;always&quot;</span></div><div class='line' id='LC128'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">stdDeviation=</span><span class="s">&quot;0.71999962&quot;</span></div><div class='line' id='LC129'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;feGaussianBlur893&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC130'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/filter&gt;</span></div><div class='line' id='LC131'>&nbsp;&nbsp;<span class="nt">&lt;/defs&gt;</span></div><div class='line' id='LC132'>&nbsp;&nbsp;<span class="nt">&lt;sodipodi:namedview</span></div><div class='line' id='LC133'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;base&quot;</span></div><div class='line' id='LC134'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">pagecolor=</span><span class="s">&quot;#ffffff&quot;</span></div><div class='line' id='LC135'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">bordercolor=</span><span class="s">&quot;#666666&quot;</span></div><div class='line' id='LC136'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">borderopacity=</span><span class="s">&quot;1.0&quot;</span></div><div class='line' id='LC137'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:pageopacity=</span><span class="s">&quot;0.0&quot;</span></div><div class='line' id='LC138'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:pageshadow=</span><span class="s">&quot;2&quot;</span></div><div class='line' id='LC139'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:zoom=</span><span class="s">&quot;1&quot;</span></div><div class='line' id='LC140'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:cx=</span><span class="s">&quot;48&quot;</span></div><div class='line' id='LC141'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:cy=</span><span class="s">&quot;47.99999&quot;</span></div><div class='line' id='LC142'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:document-units=</span><span class="s">&quot;px&quot;</span></div><div class='line' id='LC143'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:current-layer=</span><span class="s">&quot;layer3&quot;</span></div><div class='line' id='LC144'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">showgrid=</span><span class="s">&quot;false&quot;</span></div><div class='line' id='LC145'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">fit-margin-top=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC146'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">fit-margin-left=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC147'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">fit-margin-right=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC148'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">fit-margin-bottom=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC149'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:window-width=</span><span class="s">&quot;1184&quot;</span></div><div class='line' id='LC150'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:window-height=</span><span class="s">&quot;1022&quot;</span></div><div class='line' id='LC151'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:window-x=</span><span class="s">&quot;648&quot;</span></div><div class='line' id='LC152'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:window-y=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC153'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:window-maximized=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC154'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">showborder=</span><span class="s">&quot;true&quot;</span></div><div class='line' id='LC155'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">showguides=</span><span class="s">&quot;false&quot;</span></div><div class='line' id='LC156'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:guide-bbox=</span><span class="s">&quot;true&quot;</span></div><div class='line' id='LC157'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:showpageshadow=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC158'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;inkscape:grid</span></div><div class='line' id='LC159'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">type=</span><span class="s">&quot;xygrid&quot;</span></div><div class='line' id='LC160'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;grid821&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC161'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;sodipodi:guide</span></div><div class='line' id='LC162'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">orientation=</span><span class="s">&quot;1,0&quot;</span></div><div class='line' id='LC163'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">position=</span><span class="s">&quot;16,48&quot;</span></div><div class='line' id='LC164'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;guide823&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC165'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;sodipodi:guide</span></div><div class='line' id='LC166'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">orientation=</span><span class="s">&quot;0,1&quot;</span></div><div class='line' id='LC167'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">position=</span><span class="s">&quot;64,80&quot;</span></div><div class='line' id='LC168'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;guide825&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC169'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;sodipodi:guide</span></div><div class='line' id='LC170'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">orientation=</span><span class="s">&quot;1,0&quot;</span></div><div class='line' id='LC171'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">position=</span><span class="s">&quot;80,40&quot;</span></div><div class='line' id='LC172'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;guide827&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC173'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;sodipodi:guide</span></div><div class='line' id='LC174'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">orientation=</span><span class="s">&quot;0,1&quot;</span></div><div class='line' id='LC175'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">position=</span><span class="s">&quot;64,16&quot;</span></div><div class='line' id='LC176'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;guide829&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC177'>&nbsp;&nbsp;<span class="nt">&lt;/sodipodi:namedview&gt;</span></div><div class='line' id='LC178'>&nbsp;&nbsp;<span class="nt">&lt;metadata</span></div><div class='line' id='LC179'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;metadata6522&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC180'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;rdf:RDF&gt;</span></div><div class='line' id='LC181'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;cc:Work</span></div><div class='line' id='LC182'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">rdf:about=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC183'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;dc:format&gt;</span>image/svg+xml<span class="nt">&lt;/dc:format&gt;</span></div><div class='line' id='LC184'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;dc:type</span></div><div class='line' id='LC185'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">rdf:resource=</span><span class="s">&quot;http://purl.org/dc/dcmitype/StillImage&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC186'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;dc:title</span> <span class="nt">/&gt;</span></div><div class='line' id='LC187'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/cc:Work&gt;</span></div><div class='line' id='LC188'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/rdf:RDF&gt;</span></div><div class='line' id='LC189'>&nbsp;&nbsp;<span class="nt">&lt;/metadata&gt;</span></div><div class='line' id='LC190'>&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC191'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;BACKGROUND&quot;</span></div><div class='line' id='LC192'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:groupmode=</span><span class="s">&quot;layer&quot;</span></div><div class='line' id='LC193'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;layer1&quot;</span></div><div class='line' id='LC194'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;translate(268,-635.29076)&quot;</span></div><div class='line' id='LC195'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;display:inline&quot;</span></div><div class='line' id='LC196'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:insensitive=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC197'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC198'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;fill:url(#linearGradient6461);fill-opacity:1;stroke:none;display:inline;filter:url(#filter1121)&quot;</span></div><div class='line' id='LC199'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;m -268,700.15563 0,-33.72973 c 0,-27.24324 3.88785,-31.13513 31.10302,-31.13513 l 33.79408,0 c 27.21507,0 31.1029,3.89189 31.1029,31.13513 l 0,33.72973 c 0,27.24325 -3.88783,31.13514 -31.1029,31.13514 l -33.79408,0 c -27.21517,0 -31.10302,-3.89189 -31.10302,-31.13514 z&quot;</span></div><div class='line' id='LC200'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;path6455&quot;</span></div><div class='line' id='LC201'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:connector-curvature=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC202'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:nodetypes=</span><span class="s">&quot;sssssssss&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC203'>&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC204'>&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC205'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:groupmode=</span><span class="s">&quot;layer&quot;</span></div><div class='line' id='LC206'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;layer3&quot;</span></div><div class='line' id='LC207'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;PLACE YOUR PICTOGRAM HERE&quot;</span></div><div class='line' id='LC208'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;display:inline&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC209'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC210'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;fill:#ffffff;fill-opacity:1;filter:url(#filter950)&quot;</span></div><div class='line' id='LC211'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:connector-curvature=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC212'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;Drupal&quot;</span></div><div class='line' id='LC213'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;M 61.98345,27.901291 C 58.705193,25.863932 55.606837,25.064629 52.515612,23.027287 50.599136,21.733039 47.939549,18.650333 45.708779,16 c -0.429517,4.254633 -1.730162,5.984779 -3.217103,7.218577 -3.149555,2.461882 -5.131442,3.200734 -7.85644,4.682714 -2.2891,1.172629 -14.724438,8.568281 -14.724438,24.478845 C 19.910798,68.28716 33.33815,80 48.245343,80 63.158216,80 76.089202,69.210905 76.089202,52.871524 c 0,-16.340099 -12.126706,-23.737873 -14.105752,-24.970233 z m 0.251739,45.879276 c -0.311472,0.305777 -3.15737,2.279847 -6.496077,2.590603 -3.341545,0.305777 -7.859996,0.491386 -10.580033,-1.97549 -0.431655,-0.433075 -0.312175,-1.044629 0,-1.29069 0.308632,-0.251022 0.555378,-0.436616 0.928722,-0.436616 0.373342,0 0.305777,0 0.495646,0.123803 1.236638,0.98847 3.091242,1.786337 7.048618,1.786337 3.961651,0 6.74852,-1.103658 7.983737,-2.033801 0.556097,-0.430219 0.803562,-0.05966 0.867569,0.187733 0.05967,0.245342 0.184175,0.617968 -0.248182,1.048201 z m -10.722966,-5.19047 c 0.680539,-0.618669 1.797711,-1.605703 2.850159,-2.03522 1.051744,-0.433076 1.602863,-0.371206 2.596295,-0.371206 0.988455,0 2.044477,0.06191 2.784028,0.558937 0.740272,0.493526 1.176203,1.600024 1.418692,2.212296 0.250303,0.620808 0,0.988455 -0.48997,1.238058 -0.430936,0.243922 -0.494929,0.12157 -0.928722,-0.677699 -0.429516,-0.800707 -0.80214,-1.605706 -2.968919,-1.605706 -2.163941,0 -2.8459,0.74241 -3.897645,1.605706 -1.051024,0.861172 -1.423651,1.170506 -1.796275,0.677699 -0.370502,-0.49209 -0.246762,-0.987737 0.432357,-1.602865 z M 73.843499,56.836732 c 0,1.910061 -0.616548,5.361836 -2.105627,7.519361 -1.479843,2.161098 -2.407144,2.963943 -4.145826,2.838799 -2.229368,-0.187749 -6.680969,-7.091997 -9.526151,-7.217859 -3.584048,-0.12157 -11.382892,7.466743 -17.509888,7.466743 -3.713468,0 -4.822809,-0.554677 -6.059444,-1.359658 -1.858865,-1.294951 -2.787586,-3.266882 -2.726434,-5.981223 0.06605,-4.81215 4.576761,-9.307834 10.272118,-9.367566 7.234211,-0.06398 12.251868,7.146033 15.897771,7.08772 3.095501,-0.0584 9.037618,-6.104961 11.945386,-6.104961 3.091945,0 3.958095,3.201467 3.958095,5.118644 z&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC214'>&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC215'>&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC216'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:groupmode=</span><span class="s">&quot;layer&quot;</span></div><div class='line' id='LC217'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;layer2&quot;</span></div><div class='line' id='LC218'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:label=</span><span class="s">&quot;BADGE&quot;</span></div><div class='line' id='LC219'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;display:none&quot;</span></div><div class='line' id='LC220'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:insensitive=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC221'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC222'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;display:inline&quot;</span></div><div class='line' id='LC223'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;translate(-340.00001,-581)&quot;</span></div><div class='line' id='LC224'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;g4394&quot;</span></div><div class='line' id='LC225'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">clip-path=</span><span class="s">&quot;none&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC226'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC227'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;g855&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC228'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC229'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:groupmode=</span><span class="s">&quot;maskhelper&quot;</span></div><div class='line' id='LC230'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;g870&quot;</span></div><div class='line' id='LC231'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">clip-path=</span><span class="s">&quot;url(#clipPath873)&quot;</span></div><div class='line' id='LC232'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;opacity:0.6;filter:url(#filter891)&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC233'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC234'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;matrix(1.4999992,0,0,1.4999992,-29.999795,-237.54282)&quot;</span></div><div class='line' id='LC235'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;m 264,552.36218 a 12,12 0 1 1 -24,0 12,12 0 1 1 24,0 z&quot;</span></div><div class='line' id='LC236'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:ry=</span><span class="s">&quot;12&quot;</span></div><div class='line' id='LC237'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:rx=</span><span class="s">&quot;12&quot;</span></div><div class='line' id='LC238'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cy=</span><span class="s">&quot;552.36218&quot;</span></div><div class='line' id='LC239'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cx=</span><span class="s">&quot;252&quot;</span></div><div class='line' id='LC240'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;path844&quot;</span></div><div class='line' id='LC241'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate&quot;</span></div><div class='line' id='LC242'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:type=</span><span class="s">&quot;arc&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC243'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC244'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;g</span></div><div class='line' id='LC245'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;g862&quot;</span><span class="nt">&gt;</span></div><div class='line' id='LC246'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC247'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:type=</span><span class="s">&quot;arc&quot;</span></div><div class='line' id='LC248'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;color:#000000;fill:#f5f5f5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate&quot;</span></div><div class='line' id='LC249'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;path4398&quot;</span></div><div class='line' id='LC250'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cx=</span><span class="s">&quot;252&quot;</span></div><div class='line' id='LC251'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cy=</span><span class="s">&quot;552.36218&quot;</span></div><div class='line' id='LC252'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:rx=</span><span class="s">&quot;12&quot;</span></div><div class='line' id='LC253'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:ry=</span><span class="s">&quot;12&quot;</span></div><div class='line' id='LC254'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;m 264,552.36218 a 12,12 0 1 1 -24,0 12,12 0 1 1 24,0 z&quot;</span></div><div class='line' id='LC255'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;matrix(1.4999992,0,0,1.4999992,-29.999795,-238.54282)&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC256'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC257'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;matrix(1.25,0,0,1.25,33,-100.45273)&quot;</span></div><div class='line' id='LC258'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;m 264,552.36218 a 12,12 0 1 1 -24,0 12,12 0 1 1 24,0 z&quot;</span></div><div class='line' id='LC259'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:ry=</span><span class="s">&quot;12&quot;</span></div><div class='line' id='LC260'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:rx=</span><span class="s">&quot;12&quot;</span></div><div class='line' id='LC261'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cy=</span><span class="s">&quot;552.36218&quot;</span></div><div class='line' id='LC262'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cx=</span><span class="s">&quot;252&quot;</span></div><div class='line' id='LC263'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;path4400&quot;</span></div><div class='line' id='LC264'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;color:#000000;fill:#dd4814;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate&quot;</span></div><div class='line' id='LC265'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:type=</span><span class="s">&quot;arc&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC266'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;path</span></div><div class='line' id='LC267'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:type=</span><span class="s">&quot;star&quot;</span></div><div class='line' id='LC268'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">style=</span><span class="s">&quot;color:#000000;fill:#f5f5f5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate&quot;</span></div><div class='line' id='LC269'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">id=</span><span class="s">&quot;path4459&quot;</span></div><div class='line' id='LC270'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:sides=</span><span class="s">&quot;5&quot;</span></div><div class='line' id='LC271'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cx=</span><span class="s">&quot;666.19574&quot;</span></div><div class='line' id='LC272'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:cy=</span><span class="s">&quot;589.50385&quot;</span></div><div class='line' id='LC273'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:r1=</span><span class="s">&quot;7.2431178&quot;</span></div><div class='line' id='LC274'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:r2=</span><span class="s">&quot;4.3458705&quot;</span></div><div class='line' id='LC275'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:arg1=</span><span class="s">&quot;1.0471976&quot;</span></div><div class='line' id='LC276'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">sodipodi:arg2=</span><span class="s">&quot;1.6755161&quot;</span></div><div class='line' id='LC277'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:flatsided=</span><span class="s">&quot;false&quot;</span></div><div class='line' id='LC278'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:rounded=</span><span class="s">&quot;0.1&quot;</span></div><div class='line' id='LC279'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">inkscape:randomized=</span><span class="s">&quot;0&quot;</span></div><div class='line' id='LC280'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">d=</span><span class="s">&quot;m 669.8173,595.77657 c -0.39132,0.22593 -3.62645,-1.90343 -4.07583,-1.95066 -0.44938,-0.0472 -4.05653,1.36297 -4.39232,1.06062 -0.3358,-0.30235 0.68963,-4.03715 0.59569,-4.47913 -0.0939,-0.44198 -2.5498,-3.43681 -2.36602,-3.8496 0.18379,-0.41279 4.05267,-0.59166 4.44398,-0.81759 0.39132,-0.22593 2.48067,-3.48704 2.93005,-3.4398 0.44938,0.0472 1.81505,3.67147 2.15084,3.97382 0.3358,0.30236 4.08294,1.2817 4.17689,1.72369 0.0939,0.44198 -2.9309,2.86076 -3.11469,3.27355 -0.18379,0.41279 0.0427,4.27917 -0.34859,4.5051 z&quot;</span></div><div class='line' id='LC281'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">transform=</span><span class="s">&quot;matrix(1.511423,-0.16366377,0.16366377,1.511423,-755.37346,-191.93651)&quot;</span> <span class="nt">/&gt;</span></div><div class='line' id='LC282'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC283'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC284'>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC285'>&nbsp;&nbsp;<span class="nt">&lt;/g&gt;</span></div><div class='line' id='LC286'><span class="nt">&lt;/svg&gt;</span></div></pre></div></td>
+         </tr>
+       </table>
+  </div>
+
+  </div>
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" class="js-jump-to-line" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" class="js-jump-to-line-form">
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" autofocus>
+    <button type="submit" class="button">Go</button>
+  </form>
+</div>
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com">API</a></li>
+      <li><a href="http://training.github.com">Training</a></li>
+      <li><a href="http://shop.github.com">Shop</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+
+    </ul>
+
+    <a href="/">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>&copy; 2014 <span title="0.04833s from github-fe130-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="/site/terms">Terms</a></li>
+        <li><a href="/site/privacy">Privacy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x close js-ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-c044173f1e759e8299dbe414ec8ed23e4405bdc5.js" type="text/javascript"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-29f58289d332be6793882fd0aa758ff78c310289.js" type="text/javascript"></script>
+      
+      
+        <script async src="https://www.google-analytics.com/analytics.js"></script>
+  </body>
+</html>
+
