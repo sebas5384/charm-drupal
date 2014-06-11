@@ -10,6 +10,10 @@ hooks = charmhelpers.contrib.ansible.AnsibleHooks(
     playbook_path='site.yaml',
     default_hooks=['start', 'stop', 'config-changed'])
 
+# @hooks.hook('config-changed', 'start', 'stop')
+# def just_use_playbook():
+#     pass
+
 @hooks.hook()
 def install():
     """Install ansible.

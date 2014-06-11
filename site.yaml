@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  vars:
+    env:
+      HOME: /home/ubuntu
 
   pre_tasks:
     - name: "Install tools like Wget, Git, Vim."
@@ -26,8 +29,12 @@
       tags:
         - install
         - upgrade-charm
-        - config-changed 
+        - config-changed
 
+    - name: "Configure user ubuntu and Composer home directory into bashrc."
+      lineinfile: line='export HOME="/home/ubuntu"'
+        insertbefore=BOF state=present create=yes dest=/home/ubuntu/.bashrc
+      tags: install
 
   roles:
     # Install Nginx with extras.
@@ -119,6 +126,21 @@
           http:
             port: 80
           server_name: "_"
+
+    - role: pbuyle.php-composer
+      composer_user: ubuntu
+      composer_user_home: /home/ubuntu
+      tags:
+        - install
+        - upgrade-charm
+        - config-changed
+
+    - role: geerlingguy.drush
+      drush_version: 6.x
+      tags:
+        - install
+        - upgrade-charm
+        - config-changed
 
   tasks:
     - name: "Adding ubuntu user in the www-data group."

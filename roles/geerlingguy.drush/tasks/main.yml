@@ -10,6 +10,8 @@
     {{ composer_path }} install
     chdir={{ drush_install_path }}
     creates={{ drush_install_path }}/vendor/autoload.php
+  environment:
+    HOME: "{{ composer_user_home }}"
 
 - name: "Create drush symlink."
   file: src={{ drush_install_path }}/drush dest={{ drush_path }} state=link
