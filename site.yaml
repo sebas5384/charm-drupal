@@ -1,8 +1,5 @@
 ---
 - hosts: all
-  vars:
-    env:
-      HOME: /home/ubuntu
 
   pre_tasks:
     - name: "Install tools like Wget, Git, Vim."
