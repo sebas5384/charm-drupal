@@ -1,0 +1,23 @@
+---
+- name: "Check if the boilerplate was already cloned."
+  stat: "path={{ drupal_boilerplate_destination }}/{{ drupal_boilerplate_dirs.drupal.name }}"
+  register: drupal_boilerplate_status
+
+- name: "Clone boilerplate form {{ drupal_boilerplate_source }}"
+  git: >
+    repo={{ drupal_boilerplate_source }}
+    dest={{ drupal_boilerplate_destination }}
+    update=no
+    accept_hostkey=yes
+  when: not drupal_boilerplate_status.stat.exists and drupal_boilerplate_source != ""
+
+- command: "rm -rf {{ drupal_boilerplate_destination }}/.git removes={{ drupal_boilerplate_destination }}/.git"
+  when: not drupal_boilerplate_status.stat.exists and drupal_boilerplate_source != ""
+
+- name: "Check directories structure."
+  file: "path={{ drupal_boilerplate_destination }}/{{ item.value.name }} state={{ item.value.state }}"
+  with_dict: drupal_boilerplate_dirs
+  when: drupal_boilerplate_build and drupal_boilerplate_source != "" and item.key != "drupal"
+
+- command: "rm -rf {{ drupal_boilerplate_destination }}/.git removes={{ drupal_boilerplate_destination }}/.gitignore"
+  when: not drupal_boilerplate_gitignore and drupal_boilerplate_source != ""

@@ -1,0 +1,61 @@
+---
+# New project from Drupal.org
+- name: "New project from Drupal.org"
+  include: from-drush.yaml
+  when: drupal_source == "drush"
+
+# New project from Git.
+- name: "New project from Git."
+  include: from-git.yaml
+  when: drupal_source | match("^(git|ssh|(http(s)?)).+\.git$")
+
+- name: "Generate a random password."
+  shell: >
+    date +%s | base64 | head -c 8
+  register: drupal_admin_password_result
+  when: drupal_admin_password is not defined or drupal_admin_password == ""
+
+- name: "Override Drupal Admin password fact."
+  set_fact: "drupal_admin_password={{ drupal_admin_password_result.stdout }}"
+  when: drupal_admin_password_result.stdout is defined
+
+- name: "Set permissions properly on files directory."
+  file: >
+    path={{ drupal_path }}/sites/default/files
+    mode=6774
+    owner={{ drupal_www_owner }}
+    group={{ drupal_www_group }}
+    state=directory
+    recurse=yes
+  sudo: yes
+
+- name: "Create contrib directories."
+  file: >
+    path={{ drupal_path }}/sites/all/{{ item }}/contrib
+    owner={{ drupal_www_owner }}
+    group={{ drupal_www_group }}
+    state=directory
+    recurse=yes
+  sudo: yes
+  with_items:
+    - modules
+    - themes
+
+# And finally install the Drupal via drush.
+- name: "Install Drupal."
+  command: >
+    drush si -y
+    --site-name="{{ drupal_site_name }}"
+    --account-name={{ drupal_admin_name }}
+    --account-pass={{ drupal_admin_password }}
+    --db-url={{ drupal_db.type }}://{{ drupal_db.user }}:{{ drupal_db.password }}@{{ drupal_db.host }}/{{ drupal_db.database }}
+    chdir={{ drupal_path }}
+    creates={{ drupal_path }}/sites/default/settings.php
+  when: drupal_db.database != "" and drupal_db.host != ""
+
+# SEE: https://drupal.org/node/2121849#comment-8413637
+- name: "Set permissions properly on settings.php."
+  file: >
+    path={{ drupal_path }}/sites/default/settings.php
+    mode=744
+  when: drupal_db.database != "" and drupal_db.host != ""

@@ -1,0 +1,13 @@
+---
+# - name: "Remove git clone destination."
+#   file: >
+#     path={{ drupal_path }}/{{ drupal_source_parent_level }}
+#     state=abstent
+
+- name: "Download Drupal from Git repository."
+  git: >
+    repo={{ drupal_source }}
+    version={{ drupal_version }}
+    update=no
+    accept_hostkey=yes
+    dest={{ drupal_path }}/{{ drupal_source_parent_level }}

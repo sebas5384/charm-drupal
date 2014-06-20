@@ -1,0 +1,28 @@
+---
+drupal_boilerplate_source: https://github.com/TallerWebSolutions/drupal-boilerplate.git
+drupal_boilerplate_destination: /var/www
+drupal_boilerplate_gitignore: true
+# Only when must create other dirs.
+drupal_boilerplate_build: false
+
+drupal_boilerplate_dirs:
+  drupal:
+    name: docroot
+  drush:
+    name: drush
+    state: directory
+  databases:
+    name: databases
+    state: directory
+  configs:
+    name: configs
+    state: directory
+  scripts:
+    name: scripts
+    state: directory
+  results:
+    name: results
+    state: directory
+  tests:
+    name: tests
+    state: directory

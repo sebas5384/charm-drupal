@@ -1,0 +1,41 @@
+- name: "PPA for the last stable Nginx."
+  apt_repository: repo=ppa:nginx/stable
+
+- name: "Install tools like Wget, Git, Vim."
+  apt: "name={{ item }} state=present update_cache=yes"
+  with_items:
+    - wget
+    - git-core
+    - git-flow
+    - curl
+    - vim
+    - sysstat
+    - mktemp
+    - aptitude
+    - make
+    - mysql-client
+    - python-apt
+
+# Ruby with Compass and Sass.
+- name: "Install Ruby."
+  apt: "name={{ item }} state=present"
+  when: install_compass | bool
+  with_items:
+    - ruby
+    - rubygems
+
+- name: "Install Compass."
+  gem: name=compass state=present user_install=no
+  when: install_compass | bool
+
+- name: "Install Sass."
+  gem: name=sass version=3.2.7 state=present user_install=no
+  when: install_compass | bool
+
+- name: "Uninstall Compass."
+  gem: name=compass state=absent user_install=no
+  when: not install_compass | bool
+
+- name: "Uninstall Sass."
+  gem: name=sass state=absent user_install=no
+  when: not install_compass | bool

@@ -10,6 +10,7 @@
 
 - name: Create global composer.json file
   template: src=composer.j2 dest={{ composer_user_home }}/.composer/composer.json owner={{ composer_user }}
+  when: composer_json != []
   notify:
    - composer global update
   tags: [composer, php]

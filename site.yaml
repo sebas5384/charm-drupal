@@ -2,56 +2,36 @@
 - hosts: all
 
   pre_tasks:
-    - name: "Install tools like Wget, Git, Vim."
-      apt: name={{ item }} state=present update_cache=yes
-      tags:
-        - install
-        - upgrade-charm
-        - config-changed 
-      with_items:
-        - wget
-        - git-core
-        - git-flow
-        - curl
-        - vim
-        - sysstat
-        - mktemp
-        - aptitude
-        - make
-        - mysql-client
-        - python-apt
 
-    - name: "PPA for the last stable Nginx."
-      apt_repository: repo=ppa:nginx/stable
+    - name: "Copy private SSH key."
+      shell: >
+        echo "{{ deploy_key }}" > ~/.id_rsa
+      when: >
+        deploy_key != ""
+
+    # Install dependencies.
+    - name: "Install dependencies."
+      include: tasks/install-dependencies.yaml
       tags:
         - install
         - upgrade-charm
         - config-changed
 
-    - name: "Configure user ubuntu and Composer home directory into bashrc."
-      lineinfile: line='export HOME="/home/ubuntu"'
-        insertbefore=BOF state=present create=yes dest=/home/ubuntu/.bashrc
-      tags: install
-
   roles:
-    # Install Nginx with extras.
+    # Install: Nginx with extras.
     - role: jdauphant.nginx
-      tags:
-        - packages
-        - install
-        - upgrade-charm
-        - config-changed 
-
       ubuntu_pkg:
         - python-selinux
         - nginx-extras
+      tags:
+        - install
+        - upgrade-charm
 
-    # Install and configure php-fpm.
+    # Install and configure: PHP-FPM with 3 pools.
     - role: nbz4live.php-fpm
       tags:
         - install
         - upgrade-charm
-        - config-changed 
 
       php_fpm_apt_packages:
         - php5-fpm
@@ -99,10 +79,9 @@
           pm.max_spare_servers: 3
           chdir: /
 
-    # Perusio's Nginx configurations.
+    # Install: Perusio's Nginx configurations.
     - role: pbuyle.nginx-drupal
       tags:
-        - install
         - upgrade-charm
         - config-changed 
       nginx_drupal_use_drush: false
@@ -124,45 +103,72 @@
             port: 80
           server_name: "_"
 
+    # Install: PHP Composer.
     - role: pbuyle.php-composer
       composer_user: ubuntu
       composer_user_home: /home/ubuntu
       tags:
-        - install
-        - upgrade-charm
         - config-changed
+        - upgrade-charm
 
+    # Install: Drush.
     - role: geerlingguy.drush
       drush_version: 6.x
       tags:
-        - install
-        - upgrade-charm
         - config-changed
+        - upgrade-charm
+
+    # Install: Drupal Boilerplate.
+    - role: sebas5384.drupal-boilerplate
+      when: >
+        drupal_source == "drush" and install_drupal_boilerplate|bool
+      tags:
+        - config-changed
+        - upgrade-charm
+
+    # Install: Drupal.
+    - role: sebas5384.drupal
+      # @TODO: This can be part of the charm configs.
+      drupal_path: /var/www/docroot
+      tags:
+        - config-changed
+        - upgrade-charm
+
 
   tasks:
     - name: "Adding ubuntu user in the www-data group."
       user: name=ubuntu groups=www-data
       tags:
-        - install
-        - upgrade-charm
         - config-changed 
+        - upgrade-charm
 
-    - name: "Start Nginx e php-fpm"
-      service: name={{ item }} state=started
+    - name: "Start Nginx e php-fpm."
+      service: "name={{ item }} state=started"
       with_items:
         - nginx
         - php5-fpm
       tags:
         - start
 
-    - name: "Stop Nginx e php-fpm"
-      service: name={{ item }} state=stopped
+    - name: "Stop Nginx e php-fpm."
+      service: "name={{ item }} state=stopped"
       with_items:
         - nginx
         - php5-fpm
       tags:
         - stop
 
+    - name: "Set permissions for the /var/www directory."
+      file: path=/var/www owner=ubuntu group=www-data state=directory recurse=yes
+      tags:
+        - config-changed
+        - upgrade-charm
+
+    - name: "Set permissions for the user home directory."
+      file: path=/home/ubuntu owner=ubuntu group=ubuntu recurse=yes
+      tags:
+        - config-changed
+        - upgrade-charm
 
 
 

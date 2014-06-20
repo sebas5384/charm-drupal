@@ -1,0 +1,29 @@
+---
+drupal_path: /var/www
+drupal_site_name: "New Drupal install"
+drupal_www_owner: ubuntu
+drupal_www_group: www-data
+drupal_version: "7"
+drupal_profile: standard
+
+# Download source:
+#   - drush | Latest version using Drush.
+#   - git://host.com/drupal.git | Version must be a valid branch or tag.
+drupal_source: drush
+
+# This is useful when your source haves a parent directory
+# structure, for example a bolerplate.
+#    - ".." | One step back.
+#    - "../.." | Two steps back.
+drupal_source_parent_level: ""
+
+drupal_admin_name: admin
+drupal_admin_email: admin@localhost.com
+# drupal_admin_password: "123456"
+
+drupal_db:
+  type: mysql
+  user: ""
+  password: ""
+  database: ""
+  host: ""

@@ -1,0 +1,8 @@
+---
+- name: "Download Drupal using Drush."
+  command: >
+    drush dl -y drupal-{{ drupal_version }}
+    --drupal-project-rename="{{ drupal_path | basename }}"
+    --destination="{{ drupal_path }}/../"
+    creates={{ drupal_path }}/index.php
+  when: drupal_source == "drush"

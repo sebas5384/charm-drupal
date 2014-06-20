@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import sys
 import charmhelpers.contrib.ansible
 
@@ -9,6 +10,9 @@ import charmhelpers.contrib.ansible
 hooks = charmhelpers.contrib.ansible.AnsibleHooks(
     playbook_path='site.yaml',
     default_hooks=['start', 'stop', 'config-changed'])
+
+# Missing envs variables.
+os.environ['HOME'] = '/home/ubuntu'
 
 # @hooks.hook('config-changed', 'start', 'stop')
 # def just_use_playbook():
