@@ -43,7 +43,7 @@ options:
   #   description: "Destination path of the boilerplate."
   drupal_boilerplate_source:
     type: string
-    default: "https://github.com/TallerWebSolutions/drupal_boilerplate.git"
+    default: "https://github.com/TallerWebSolutions/drupal-boilerplate.git"
     description: "Git repository of the boilerplate to install in case it's a new project from scratch."
   install_compass:
     type: boolean
