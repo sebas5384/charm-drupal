@@ -121,7 +121,7 @@
     # Install: Drupal Boilerplate.
     - role: sebas5384.drupal-boilerplate
       when: >
-        drupal_source == "drush" and install_drupal_boilerplate|bool
+        drupal_source == "drush"
       tags:
         - config-changed
         - upgrade-charm
