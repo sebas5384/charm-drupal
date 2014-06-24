@@ -1,0 +1,42 @@
+---
+# Assemble the local settings.
+- name: "Create directory with local settings."
+  file: >
+    path={{ drupal_path }}/sites/default/.settings
+    state=directory
+
+- name: "Database local settings."
+  template: >
+    src=settings.db.j2
+    dest="{{ drupal_path }}/sites/default/.settings/database"
+
+- name: "Create local settings.local.php file with local info like database."
+  assemble: >
+    src={{ drupal_path }}/sites/default/.settings
+    dest={{ drupal_path }}/sites/default/settings.local.php
+# Insert <?php tag.
+- lineinfile: >
+    line='<?php'
+    dest={{ drupal_path }}/sites/default/settings.local.php
+    insertafter=BOF
+    state=present
+    
+# Makes the include, if it's a new installation.
+- name: "Include the local settings file into the settings.php."
+  lineinfile: >
+    line="include 'settings.local.php';"
+    state=present
+    insertafter=EOF
+    dest={{ drupal_path }}/sites/default/settings.php
+  when: drupal_new_installation_result | success
+
+# SEE: https://drupal.org/node/2121849#comment-8413637
+- name: "Set permissions properly on settings.php files."
+  file: "path={{ drupal_path }}/sites/default/settings.php mode=744"
+  when: drupal_db.database != "" and drupal_db.host != ""
+
+# - name: "Remove settings.local.php if there's no database to connection."
+#   file: >
+#     path={{ drupal_path }}/sites/default/settings.local.php
+#     state=absent
+#   when: drupal_db.database == "" and drupal_db.host == ""

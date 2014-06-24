@@ -1,0 +1,5 @@
+---
+db_mysql__database: ''
+db_mysql__host: ''
+db_mysql__password: ''
+db_mysql__user: ''

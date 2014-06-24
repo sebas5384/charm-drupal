@@ -22,8 +22,10 @@ drupal_admin_email: admin@localhost.com
 # drupal_admin_password: "123456"
 
 drupal_db:
-  type: mysql
+  driver: mysql
   user: ""
   password: ""
   database: ""
   host: ""
+  port: ""
+  prefix: ""

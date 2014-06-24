@@ -19,6 +19,10 @@
   set_fact: "drupal_admin_password={{ drupal_admin_password_result.stdout }}"
   when: drupal_admin_password_result.stdout is defined
 
+- debug: >
+    msg="{{ drupal_admin_name }} password: {{ drupal_admin_password }}"
+  when: drupal_admin_password_result.stdout is defined
+
 - name: "Set permissions properly on files directory."
   file: >
     path={{ drupal_path }}/sites/default/files
@@ -48,14 +52,17 @@
     --site-name="{{ drupal_site_name }}"
     --account-name={{ drupal_admin_name }}
     --account-pass={{ drupal_admin_password }}
-    --db-url={{ drupal_db.type }}://{{ drupal_db.user }}:{{ drupal_db.password }}@{{ drupal_db.host }}/{{ drupal_db.database }}
+    --db-url={{ drupal_db.driver }}://{{ drupal_db.user }}:{{ drupal_db.password }}@{{ drupal_db.host }}/{{ drupal_db.database }}
     chdir={{ drupal_path }}
     creates={{ drupal_path }}/sites/default/settings.php
-  when: drupal_db.database != "" and drupal_db.host != ""
+  register: drupal_new_installation_result
+  when: drupal_db.database != "" and drupal_db.host != "" and drupal_source == "drush"
 
-# SEE: https://drupal.org/node/2121849#comment-8413637
-- name: "Set permissions properly on settings.php."
-  file: >
-    path={{ drupal_path }}/sites/default/settings.php
-    mode=744
-  when: drupal_db.database != "" and drupal_db.host != ""
+# Drupal Settings files.
+- include: settings.php.yaml
+
+- name: "Check Drupal status."
+  shell: >
+    drush status
+    chdir={{ drupal_path }}
+  register: drupal_status_result

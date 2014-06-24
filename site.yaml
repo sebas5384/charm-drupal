@@ -3,11 +3,16 @@
 
   pre_tasks:
 
+    - name: "Default vars: db-mysql relation."
+      include_vars: default/db-mysql-relation.yaml
+      when: db_mysql__database is not defined or db_mysql__database == ''
+
     - name: "Copy private SSH key."
       shell: >
-        echo "{{ deploy_key }}" > ~/.id_rsa
+        echo "{{ deploy_key }}" > /home/ubuntu/.ssh/id_rsa
+        creates=/home/ubuntu/.ssh/id_rsa
       when: >
-        deploy_key != ""
+        deploy_key != ''
 
     # Install dependencies.
     - name: "Install dependencies."
@@ -98,7 +103,7 @@
         - "unix:/var/run/php-fpm-bkp.sock"
       nginx_drupal_sites:
         - file_name: default
-          root: /var/www
+          root: /var/www/docroot
           http:
             port: 80
           server_name: "_"
@@ -130,9 +135,17 @@
     - role: sebas5384.drupal
       # @TODO: This can be part of the charm configs.
       drupal_path: /var/www/docroot
+      drupal_db:
+        driver: mysql
+        database: "{{ db_mysql__database }}"
+        host: "{{ db_mysql__host }}"
+        user: "{{ db_mysql__user }}"
+        password: "{{ db_mysql__password }}"
       tags:
         - config-changed
         - upgrade-charm
+        - db-mysql-relation-changed
+        - db-mysql-relation-departed
 
 
   tasks:
@@ -169,6 +182,11 @@
       tags:
         - config-changed
         - upgrade-charm
+
+    # Charm Relations:
+    # - include: tasks/db-mysql-relation.yaml
+    #   tags:
+    #     - db-mysql-relation-departed
 
 
 
