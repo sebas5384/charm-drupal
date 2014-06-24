@@ -1,51 +1,51 @@
 options:
-  drupal_version:
+  drupal-version:
     type: string
     default: "7"
     description: "Drupal version, currently supported 6 and 7."
-  drupal_profile:
+  drupal-profile:
     type: string
     default: "standard"
     description: "Profile name like standard, minimal or testing."
-  drupal_site_name:
+  drupal-site-name:
     type: string
     default: "Your fresh new site"
     description: "The Site Name, used when is a fresh install."
-  drupal_admin_username:
+  drupal-admin-username:
     type: string
     default: "admin"
     description: "The default administrator user name."
-  drupal_admin_email:
+  drupal-admin-email:
     type: string
     default: "admin@localhost.com"
     description: "The default administrator user name."
-  drupal_admin_password:
+  drupal-admin-password:
     type: string
     default: ""
     description: "The default administrator password."
-  drupal_source:
+  drupal-source:
     type: string
     default: "drush"
     description: >
       From where the Drupal will be downloaded, currently supported a repository Git (Ex. git@host:path/repo.git) or 'drush' to download from the Drupal.org.
-      Deploying from Git a Lullabot boilerplate based fork is expected https://github.com/TallerWebSolutions/drupal_boilerplate
-  deploy_key:
+      Deploying from Git a Lullabot boilerplate based fork is expected https://github.com/TallerWebSolutions/drupal-boilerplate
+  deploy-key:
     type: string
     default: ""
     description: "A deploy ssh key that is stored on the server and grants access to a repository (Git only)."
-  install_drupal_boilerplate:
-    type: boolean
-    default: true
-    description: "Use boilerplate."
-  # drupal_boilerplate_destination:
+  # install-drupal-boilerplate:
+  #   type: boolean
+  #   default: true
+  #   description: "Use boilerplate."
+  # drupal-boilerplate-destination:
   #   type: string
   #   default: "/var/www"
   #   description: "Destination path of the boilerplate."
-  drupal_boilerplate_source:
+  drupal-boilerplate-source:
     type: string
     default: "https://github.com/TallerWebSolutions/drupal-boilerplate.git"
     description: "Git repository of the boilerplate to install in case it's a new project from scratch."
-  install_compass:
+  install-compass:
     type: boolean
     default: true
     description: "Install SASS/Compass, so that means ruby and rubygems will be installed."
