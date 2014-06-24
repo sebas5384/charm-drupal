@@ -141,6 +141,8 @@
         host: "{{ db_mysql__host }}"
         user: "{{ db_mysql__user }}"
         password: "{{ db_mysql__password }}"
+        port: ""
+        prefix: ""
       tags:
         - config-changed
         - upgrade-charm

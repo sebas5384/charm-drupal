@@ -21,6 +21,7 @@ drupal_admin_name: admin
 drupal_admin_email: admin@localhost.com
 # drupal_admin_password: "123456"
 
+# All properties are required.
 drupal_db:
   driver: mysql
   user: ""
