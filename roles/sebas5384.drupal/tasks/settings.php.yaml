@@ -14,21 +14,27 @@
   assemble: >
     src={{ drupal_path }}/sites/default/.settings
     dest={{ drupal_path }}/sites/default/settings.local.php
+    mode=744
+    state=present
+  when: drupal_db.database != "" and drupal_db.host != ""
 # Insert <?php tag.
 - lineinfile: >
     line='<?php'
     dest={{ drupal_path }}/sites/default/settings.local.php
     insertafter=BOF
     state=present
+  when: drupal_db.database != "" and drupal_db.host != ""
     
-# Makes the include, if it's a new installation.
+# Makes the include of local settings file,
+# in case it's a new installation.
 - name: "Include the local settings file into the settings.php."
   lineinfile: >
     line="include 'settings.local.php';"
     state=present
     insertafter=EOF
     dest={{ drupal_path }}/sites/default/settings.php
-  when: drupal_new_installation_result | success
+  when: >
+    drupal_new_installation_result is defined and drupal_new_installation_result.rc == 0
 
 # SEE: https://drupal.org/node/2121849#comment-8413637
 - name: "Set permissions properly on settings.php files."

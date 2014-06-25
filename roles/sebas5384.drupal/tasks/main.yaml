@@ -1,17 +1,8 @@
 ---
-# New project from Drupal.org
-- name: "New project from Drupal.org"
-  include: from-drush.yaml
-  when: drupal_source == "drush"
-
-# New project from Git.
-- name: "New project from Git."
-  include: from-git.yaml
-  when: drupal_source | match("^(git|ssh|(http(s)?)).+\.git$")
-
+# Handle the random password.
 - name: "Generate a random password."
   shell: >
-    date +%s | base64 | head -c 8
+    date +%s | sha256sum | base64 | head -c 8
   register: drupal_admin_password_result
   when: drupal_admin_password is not defined or drupal_admin_password == ""
 
@@ -23,6 +14,17 @@
     msg="{{ drupal_admin_name }} password: {{ drupal_admin_password }}"
   when: drupal_admin_password_result.stdout is defined
 
+# New project from Drupal.org
+- name: "New project from Drupal.org"
+  include: from-drush.yaml
+  when: drupal_source == "drush"
+
+# New project from Git.
+- name: "New project from Git."
+  include: from-git.yaml
+  when: drupal_source | match("^(git|ssh|(http(s)?)).+\.git$")
+
+# Permissions.
 - name: "Set permissions properly on files directory."
   file: >
     path={{ drupal_path }}/sites/default/files
@@ -44,19 +46,6 @@
   with_items:
     - modules
     - themes
-
-# And finally install the Drupal via drush.
-- name: "Install Drupal."
-  command: >
-    drush si -y
-    --site-name="{{ drupal_site_name }}"
-    --account-name={{ drupal_admin_name }}
-    --account-pass={{ drupal_admin_password }}
-    --db-url={{ drupal_db.driver }}://{{ drupal_db.user }}:{{ drupal_db.password }}@{{ drupal_db.host }}/{{ drupal_db.database }}
-    chdir={{ drupal_path }}
-    creates={{ drupal_path }}/sites/default/settings.php
-  register: drupal_new_installation_result
-  when: drupal_db.database != "" and drupal_db.host != "" and drupal_source == "drush"
 
 # Drupal Settings files.
 - include: settings.php.yaml

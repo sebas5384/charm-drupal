@@ -4,15 +4,20 @@
   pre_tasks:
 
     - name: "Default vars: db-mysql relation."
-      include_vars: default/db-mysql-relation.yaml
-      when: db_mysql__database is not defined or db_mysql__database == ''
+      include_vars: defaults/db-mysql-relation.yaml
+      when: db_mysql__database is not defined
+      tags:
+        - install
+        - upgrade-charm
+        - config-changed
 
     - name: "Copy private SSH key."
       shell: >
         echo "{{ deploy_key }}" > /home/ubuntu/.ssh/id_rsa
         creates=/home/ubuntu/.ssh/id_rsa
-      when: >
-        deploy_key != ''
+      when: deploy_key != ''
+      tags:
+        - config-changed
 
     # Install dependencies.
     - name: "Install dependencies."
@@ -52,9 +57,9 @@
 
       php_fpm_pools:
         - name: www0
-          user: www-data
-          group: www-data
           listen: /var/run/php-fpm.sock
+          listen.user: www-data
+          listen.group: www-data
           pm: dynamic
           pm.max_children: 5
           pm.start_servers: 2
@@ -63,9 +68,9 @@
           chdir: /
 
         - name: www1
-          user: www-data
-          group: www-data
           listen: /var/run/php-fpm-zwei.sock
+          listen.user: www-data
+          listen.group: www-data
           pm: dynamic
           pm.max_children: 5
           pm.start_servers: 2
@@ -74,9 +79,9 @@
           chdir: /
 
         - name: www-bkp
-          user: www-data
-          group: www-data
           listen: /var/run/php-fpm-bkp.sock
+          listen.user: www-data
+          listen.group: www-data
           pm: dynamic
           pm.max_children: 5
           pm.start_servers: 2
@@ -133,8 +138,6 @@
 
     # Install: Drupal.
     - role: sebas5384.drupal
-      # @TODO: This can be part of the charm configs.
-      drupal_path: /var/www/docroot
       drupal_db:
         driver: mysql
         database: "{{ db_mysql__database }}"

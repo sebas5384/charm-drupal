@@ -45,6 +45,11 @@ options:
     type: string
     default: "https://github.com/TallerWebSolutions/drupal-boilerplate.git"
     description: "Git repository of the boilerplate to install in case it's a new project from scratch."
+  drupal-path:
+    type: string
+    default: "/var/www/docroot"
+    description: >
+      In case you have an existant Drupal that hasn't use a boilerplate, you can always change this to /var/www for example.
   install-compass:
     type: boolean
     default: true

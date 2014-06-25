@@ -9,7 +9,10 @@ import charmhelpers.contrib.ansible
 # tagged with the hook name.
 hooks = charmhelpers.contrib.ansible.AnsibleHooks(
     playbook_path='site.yaml',
-    default_hooks=['start', 'stop', 'config-changed'])
+    default_hooks=['start', 'stop', 'config-changed',
+        'db-mysql-relation-changed',
+        'db-mysql-relation-departed'
+    ])
 
 # Missing envs variables.
 os.environ['HOME'] = '/home/ubuntu'
