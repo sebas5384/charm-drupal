@@ -26,13 +26,13 @@ This charm delivers a full optimzed stack for Drupal including the following:
 
 ### Usage:
 #### Download the charm from git:
-```shell
+```bash
 mkdir -p ~/charms/precise
 git clone git@github.com:sebas5384/charm-drupal.git ~/charms/precise/drupal
 ```
 
 #### Fresh new install:
-```shell
+```bash
 juju deploy --repository ~/charms local:precise/drupal
 juju deploy mysql
 juju add-relation mysql drupal
@@ -62,7 +62,7 @@ drupal:
     -----END RSA PRIVATE KEY-----
 ```
 - Deploy the charm:
-```shell
+```basg
 juju deploy --repository ~/charms --config ./project-x.yaml local:precise/drupal
 juju deploy mysql
 juju add-relation mysql drupal
@@ -70,6 +70,7 @@ juju expose drupal
 ```
 
 ### TODO'S:
+- Make tests with Amulet.
 - Drupal 8.x support.
 - Some PHP configuration, like memory or max upload.
 - PHP-FPM charm relation, making built-in PHP an option.
