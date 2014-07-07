@@ -11,3 +11,4 @@
     update=no
     accept_hostkey=yes
     dest={{ drupal_path }}/{{ drupal_source_parent_level }}
+    key_file={{ drupal_ssh_key_file }}

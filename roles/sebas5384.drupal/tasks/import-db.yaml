@@ -1,0 +1,46 @@
+---
+# Download the dump file. (in case)
+- name: "Download the database dump, only .sql or .gz files."
+  get_url: >
+    url={{ drupal_db_dump }}
+    dest=/tmp
+    validate_certs=no
+  register: drupal_db_dump_download_result
+  when: drupal_db_dump | match("^(http(s)?)://.+\.(sql|gz)$")
+
+- name: "Change the drupal_db_dump var to downloaded path."
+  set_fact:
+    drupal_db_dump: "/tmp/{{ drupal_db_dump | basename }}"
+  when: drupal_db_dump | match("^.+\.gz$") and drupal_db_dump_download_result.rc == 0
+
+# Unpack the dump file. (in case)
+- name: "Unpacks the dump file."
+  shell: >
+    gunzip {{ drupal_db_dump }}
+    creates={{ drupal_db_dump | regex_replace('(.*)\.gz$', '\\1') }}
+  register: drupal_db_dump_unpack_result
+  when: drupal_db_dump | match("^.+\.gz$")
+
+- name: "Change the drupal_db_dump var to the unpacked dump file."
+  set_fact:
+    drupal_db_dump: '{{ drupal_db_dump | regex_replace("(.*)\.gz$", "\\1") }}'
+  when: drupal_db_dump | match("^.+\.gz$") and drupal_db_dump_unpack_result.rc == 0
+
+# Import the dump file.
+- name: "Import dump into the Drupal database."
+  mysql_db: >
+    name={{ drupal_db.database }}
+    login_password={{ drupal_db.password }}
+    login_user={{ drupal_db.user }}
+    login_host={{ drupal_db.host }}
+    state=import
+    target={{ drupal_db_dump }}
+  register: drupal_new_installation_result
+
+- name: "Updates Drupal database."
+  shell: >
+    drush updb -y
+    chdir={{ drupal_path }}
+  sudo: yes
+  sudo_user: "{{ drupal_www_owner }}"
+  when: drupal_new_installation_result|changed

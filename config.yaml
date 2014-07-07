@@ -3,6 +3,10 @@ options:
     type: string
     default: "7"
     description: "Drupal version, currently supported 6 and 7."
+  drush-version:
+    type: string
+    default: "6.x"
+    description: "Drush version to be installed."
   drupal-profile:
     type: string
     default: "standard"
@@ -23,6 +27,10 @@ options:
     type: string
     default: ""
     description: "The default administrator password."
+  install-compass:
+    type: boolean
+    default: true
+    description: "Install SASS/Compass, so that means ruby and rubygems will be installed."
   drupal-source:
     type: string
     default: "drush"
@@ -32,7 +40,13 @@ options:
   deploy-key:
     type: string
     default: ""
-    description: "A deploy ssh key that is stored on the server and grants access to a repository (Git only)."
+    description: "A deploy ssh key that is stored on the server and grants access to a Git repository, for example."
+  drupal-db-dump:
+    type: string
+    default: ""
+    description: >
+      Database dump file to import when installing Drupal from a Git repository, currently only raw (.sql) or compressed with gzip (.gz).
+      Example: "/var/www/databases/dev-dump.sql" or "http://old-url.com/sites/default/files/backup-dump.sql.gz".
   # install-drupal-boilerplate:
   #   type: boolean
   #   default: true
@@ -50,8 +64,4 @@ options:
     default: "/var/www/docroot"
     description: >
       In case you have an existant Drupal that hasn't use a boilerplate, you can always change this to /var/www for example.
-  install-compass:
-    type: boolean
-    default: true
-    description: "Install SASS/Compass, so that means ruby and rubygems will be installed."
 

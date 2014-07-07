@@ -15,6 +15,7 @@
     - make
     - mysql-client
     - python-apt
+    - python-mysqldb
 
 # Ruby with Compass and Sass.
 - name: "Install Ruby."
@@ -29,7 +30,7 @@
   when: install_compass | bool
 
 - name: "Install Sass."
-  gem: name=sass version=3.2.7 state=present user_install=no
+  gem: name=sass state=present user_install=no
   when: install_compass | bool
 
 - name: "Uninstall Compass."

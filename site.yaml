@@ -3,13 +3,19 @@
 
   pre_tasks:
 
-    - name: "Default vars: db-mysql relation."
+    - name: "Default vars: db-mysql relation changed."
       include_vars: defaults/db-mysql-relation.yaml
       when: db_mysql__database is not defined
       tags:
         - install
         - upgrade-charm
         - config-changed
+        - db-mysql-relation-changed
+
+    - name: "Default vars: db-mysql relation departed."
+      include_vars: defaults/db-mysql-relation.yaml
+      tags:
+        - db-mysql-relation-departed
 
     - name: "Copy private SSH key."
       shell: >
@@ -18,6 +24,28 @@
       when: deploy_key != ''
       tags:
         - config-changed
+    - file: >
+        path=/home/ubuntu/.ssh/id_rsa
+        mode=400
+        owner=ubuntu
+        group=ubuntu
+      when: deploy_key != ''
+      tags:
+        - config-changed
+
+    - name: "Set permissions for the /var/www directory."
+      file: path=/var/www mode=6755 owner=ubuntu group=www-data state=directory recurse=yes
+      sudo: yes
+      tags:
+        - config-changed
+        - upgrade-charm
+
+    - name: "Set permissions for the user home directory."
+      file: path=/home/ubuntu owner=ubuntu group=ubuntu recurse=yes
+      tags:
+        - install
+        - config-changed
+        - upgrade-charm
 
     # Install dependencies.
     - name: "Install dependencies."
@@ -41,6 +69,7 @@
     - role: nbz4live.php-fpm
       tags:
         - install
+        - config-changed
         - upgrade-charm
 
       php_fpm_apt_packages:
@@ -55,10 +84,26 @@
         - php5-xdebug
         - php-mail
 
+      php_fpm_ini:
+        - option: "memory_limit"
+          section: "PHP"
+          value: "512M"
+        - option: "engine"
+          section: "PHP"
+          value: "1"
+        - option: "error_reporting"
+          section: "PHP"
+          value: "E_ALL & ~E_DEPRECATED & ~E_STRICT"
+        - option: "ldap.max_links"
+          section: "ldap"
+          value: "1"
+
       php_fpm_pools:
         - name: www0
           listen: /var/run/php-fpm.sock
-          listen.user: www-data
+          user: www-data
+          group: www-data
+          listen.owner: www-data
           listen.group: www-data
           pm: dynamic
           pm.max_children: 5
@@ -69,7 +114,9 @@
 
         - name: www1
           listen: /var/run/php-fpm-zwei.sock
-          listen.user: www-data
+          user: www-data
+          group: www-data
+          listen.owner: www-data
           listen.group: www-data
           pm: dynamic
           pm.max_children: 5
@@ -80,7 +127,9 @@
 
         - name: www-bkp
           listen: /var/run/php-fpm-bkp.sock
-          listen.user: www-data
+          user: www-data
+          group: www-data
+          listen.owner: www-data
           listen.group: www-data
           pm: dynamic
           pm.max_children: 5
@@ -92,8 +141,9 @@
     # Install: Perusio's Nginx configurations.
     - role: pbuyle.nginx-drupal
       tags:
+        - install
         - upgrade-charm
-        - config-changed 
+        - config-changed
       nginx_drupal_use_drush: false
       nginx_drupal_microcache: false
       nginx_drupal_flv_streaming: false
@@ -112,19 +162,21 @@
           http:
             port: 80
           server_name: "_"
+          default: true
 
     # Install: PHP Composer.
     - role: pbuyle.php-composer
       composer_user: ubuntu
       composer_user_home: /home/ubuntu
       tags:
+        - install
         - config-changed
         - upgrade-charm
 
     # Install: Drush.
     - role: geerlingguy.drush
-      drush_version: 6.x
       tags:
+        - install
         - config-changed
         - upgrade-charm
 
@@ -132,12 +184,15 @@
     - role: sebas5384.drupal-boilerplate
       when: >
         drupal_source == "drush"
+      sudo: yes
+      sudo_user: ubuntu
       tags:
         - config-changed
         - upgrade-charm
 
     # Install: Drupal.
     - role: sebas5384.drupal
+      drupal_source_parent_level: ".."
       drupal_db:
         driver: mysql
         database: "{{ db_mysql__database }}"
@@ -165,6 +220,8 @@
       with_items:
         - nginx
         - php5-fpm
+      notify:
+        - open-port web-server
       tags:
         - start
 
@@ -173,20 +230,19 @@
       with_items:
         - nginx
         - php5-fpm
+      notify:
+        - close-port web-server
       tags:
         - stop
 
-    - name: "Set permissions for the /var/www directory."
-      file: path=/var/www owner=ubuntu group=www-data state=directory recurse=yes
-      tags:
-        - config-changed
-        - upgrade-charm
 
-    - name: "Set permissions for the user home directory."
-      file: path=/home/ubuntu owner=ubuntu group=ubuntu recurse=yes
-      tags:
-        - config-changed
-        - upgrade-charm
+  handlers:
+    - name: "open-port web-server"
+      shell: >
+        open-port 80/tcp
+    - name: "close-port web-server"
+      shell: >
+        open-port 80/tcp
 
     # Charm Relations:
     # - include: tasks/db-mysql-relation.yaml

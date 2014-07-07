@@ -5,6 +5,7 @@ drupal_www_owner: ubuntu
 drupal_www_group: www-data
 drupal_version: "7"
 drupal_profile: standard
+drupal_ssh_key_file: "/home/{{ drupal_www_owner }}/.ssh/id_rsa"
 
 # Download source:
 #   - drush | Latest version using Drush.
@@ -19,9 +20,10 @@ drupal_source_parent_level: ""
 
 drupal_admin_name: admin
 drupal_admin_email: admin@localhost.com
-# drupal_admin_password: "123456"
+drupal_admin_password: ""
 
-# All properties are required.
+# All properties are required for Database.
+drupal_db_dump: ""
 drupal_db:
   driver: mysql
   user: ""

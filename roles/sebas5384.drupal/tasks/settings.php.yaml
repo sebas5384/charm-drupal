@@ -15,7 +15,6 @@
     src={{ drupal_path }}/sites/default/.settings
     dest={{ drupal_path }}/sites/default/settings.local.php
     mode=744
-    state=present
   when: drupal_db.database != "" and drupal_db.host != ""
 # Insert <?php tag.
 - lineinfile: >
