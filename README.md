@@ -1,72 +1,27 @@
-charm-bootstrap-ansible
+Drupal Juju charm
 =======================
 
-A quick way to get started creating a [juju][1] charm using
-[ansible][2].
+This charm delivers a full optimzed stack for Drupal including the following:
 
-Disclaimer: this template does not try to explain what's possible with
-either ansible or juju - but if you know a bit about both, it will
-show you how you can easily use them together.
+- Drupal 7.x
+- Drush
+- Nginx with the [Perusio's configurations][1]
+- PHP-FPM 5.3.x
 
-Make sure you have both git and bzr installed and then:
+### Charm configurations:
+- Drupal version, currently supported 6 and 7. Default: 7
+- Drush version to be installed. Default: 6.x
+- Profile name like standard, minimal or testing. Default: standard
+- The Site Name, used when is a fresh install. Default: Your fresh new site
+- The default administrator user name when is a fresh install. Default: admin
+- The default administrator user email. Default: admin@localhost.com
+- The default administrator password. When is a fresh install a new will be generated (search in the logs). Default: null.
+- Install SASS/Compass, so that means ruby and rubygems will be installed. Default: true
+- Drupal source, from where the Drupal will be downloaded, currently supported a repository Git (Ex. git@host:path/repo.git) or 'drush' to download from the Drupal.org. Deploying from Git a Lullabot boilerplate based fork is expected https://github.com/TallerWebSolutions/drupal-boilerplate. Default: drush
+- Deploy ssh key, an ssh key that is stored on the server and for example, grants access to a Git repository. Default: null
+- Database dump file to import when installing Drupal from a Git repository, currently only raw (.sql) or compressed with gzip (.gz). Example: "/var/www/databases/dev-dump.sql" or "http://old-url.com/sites/default/files/backup-dump.sql.gz". Default: null
+- Drupal boilerplate source. Git repository of the boilerplate to install in case it's a new project from scratch. Default: https://github.com/TallerWebSolutions/drupal-boilerplate.git
+- Drupal path. In case you have an existant Drupal that hasn't use a boilerplate, you can always change this to /var/www for example. Default: /var/www/docroot
 
-```
-$ mkdir -p charms/precise && cd charms/precise
-$ git clone https://github.com/absoludity/charm-bootstrap-ansible.git mycharm
-$ cd mycharm
-$ make
-```
 
-That will pull in the required charm-helpers library and run the unit-tests.
-Take a look around at the hooks/hooks.py or the playbooks/site.yaml,
-or deploy it with:
-
-```
-$ juju deploy --repository=../.. local:charm-bootstrap-ansible
-```
-
-If you'd like to explore what's happening when the hooks run,
-once juju status tells you that the services has 'started', you can
-open another terminal up and run
-
-```
-$ juju debug-hooks charm-bootstrap-ansible/0
-```
-
-Back in your original terminal, let's change one of the config
-options (defined in the config.yaml):
-
-```
-$ juju set charm-bootstrap-ansible string-option="Hi there"
-```
-
-Back in your debug-hooks terminal, you'll see the prompt
-has changed to let you know it's ready to run the config-changed
-hook. Run the hook to see what it does with:
-
-```
-$ hooks/config-changed
-```
-
-You'll see the output of ansible running all the tasks tagged with
-'config-changed', including a debug message with the value of
-the config option that you changed. Just 'exit' to let juju know
-the hook execution has finished.
-
-Have fun exploring the possibilities of ansible and juju!
-
-### Note about Dependencies
-The makefile to run tests requires the following dependencies
-
-- python-nose
-- python-mock
-- python-flake8
-
-installable via: 
-
-```
-$ sudo apt-get install python-nose python-mock python-flake8
-```
-
-[1]: http://juju.ubuntu.com/
-[2]: http://ansibleworks.com/
+[1]: https://github.com/perusio/drupal-with-nginx
