@@ -59,7 +59,7 @@
 - name: "Set permissions properly on files directory."
   file: >
     path={{ drupal_path }}/sites/default/files
-    mode=6774
+    mode=6775
     owner={{ drupal_www_owner }}
     group={{ drupal_www_group }}
     state=directory

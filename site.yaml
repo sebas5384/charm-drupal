@@ -34,7 +34,7 @@
         - config-changed
 
     - name: "Set permissions for the /var/www directory."
-      file: path=/var/www mode=6755 owner=ubuntu group=www-data state=directory recurse=yes
+      file: path=/var/www mode=6775 owner=ubuntu group=www-data state=directory recurse=yes
       sudo: yes
       tags:
         - config-changed
