@@ -34,7 +34,7 @@
         - config-changed
 
     - name: "Set permissions for the /var/www directory."
-      file: path=/var/www mode=6755 owner=ubuntu group=www-data state=directory recurse=yes
+      file: path=/var/www mode=6775 owner=ubuntu group=www-data state=directory recurse=yes
       sudo: yes
       tags:
         - config-changed
@@ -212,7 +212,7 @@
     - name: "Adding ubuntu user in the www-data group."
       user: name=ubuntu groups=www-data
       tags:
-        - config-changed 
+        - config-changed
         - upgrade-charm
 
     - name: "Start Nginx e php-fpm."
@@ -248,6 +248,3 @@
     # - include: tasks/db-mysql-relation.yaml
     #   tags:
     #     - db-mysql-relation-departed
-
-
-
