@@ -160,6 +160,7 @@
       nginx_drupal_sites:
         - file_name: default
           root: "{{ drupal_path }}"
+          limit_conn: None
           http:
             port: 80
           server_name: "_"
