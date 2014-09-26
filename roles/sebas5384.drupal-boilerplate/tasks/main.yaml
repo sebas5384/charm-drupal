@@ -4,7 +4,7 @@
   register: drupal_boilerplate_status
 
 - name: "Clone boilerplate form {{ drupal_boilerplate_source }}"
-  git: >
+  git: |
     repo={{ drupal_boilerplate_source }}
     dest={{ drupal_boilerplate_destination }}
     update=no

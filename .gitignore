@@ -4,3 +4,4 @@ hooks/charmhelpers
 .DS_Store
 *.swp
 *~
+.bzr
