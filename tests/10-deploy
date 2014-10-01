@@ -1,0 +1,85 @@
+#!/usr/bin/python
+
+import amulet
+import unittest
+import requests
+import pdb
+
+class TestDeploy(unittest.TestCase):
+
+    """
+      Func: setUpClass
+      Desc: Configure the deployment procedurally, and assign local variables
+      to easily access the deployment sentries to be consumed in tests.
+    """
+  @classmethod
+  def setUpClass(cls):
+    # Define the deployment object as a property
+    cls.d = amulet.Deployment()
+
+    # Add charms to the deployment
+    cls.d.add('drupal')
+    cls.d.add('mysql', 'cs:precise/mysql')
+
+
+    # send configuration to drupal so we can drive a login
+    cls.d.configure('drupal', {'drupal-admin-password': 'hooba'})
+
+    # add relations
+    cls.d.relate('drupal:db-mysql', 'mysql:db')
+
+    # dont forget to expose the proper services
+    cls.d.expose('drupal')
+
+    # Give amulet some time to stand up our services and set up sentries
+    try:
+      cls.d.setup(timeout=1200)
+      cls.d.sentry.wait()
+    except amulet.helpers.TimeoutError:
+      amulet.raise_status(amulet.SKIP, msg="Environment wasn't stoodup in time")
+    except:
+      raise
+
+    cls.drupal = cls.d.sentry.unit['drupal/0']
+    cls.mysql = cls.d.sentry.unit['mysql/0']
+
+
+  """
+    Func: test_drupal_response
+    Desc: drive a simple HTTP response, validate 200OK status, and the drupal
+    site title is present on the response text.
+  """
+  def test_drupal_response(self):
+    url = "http://{}/".format(self.drupal.info['public-address'])
+    resp = requests.get(url)
+    # Throw an error if code not 200OK
+    resp.raise_for_status()
+
+    if "fresh new site" not in resp.text:
+      amulet.raise_status(amulet.FAIL, "Did not validate site title in respose")
+
+  """
+    Func: test_msyql_settings
+    Desc: Test the MySQL Database properties are written on the host properly
+    by inspecting relationship data, and the settings.php on the drupal unit
+  """
+  def test_mysql_settings(self):
+    # this will fetch a dict of the information being sent over the wire
+    # it returns a dict, like so: {u'slave': u'False', u'database': u'relation-sentry',
+    # u'private-address': u'10.0.3.209', u'host': u'10.0.3.209',
+    # u'user': u'maekaecaivookoo', u'password': u'eisuicairobeeth'}
+    reldata = self.mysql.relation('db', 'drupal:db-mysql')
+
+    # Define the location to scrape data from the HOST, and grab the file cont.
+    settings_path = "/var/www/docroot/sites/default/settings.php"
+    drupaldb = self.drupal.file_contents(settings_path)
+
+    # Define the keys we care about inspecting and search the file for them.
+    keys = ['database', 'host', 'user', 'password']
+    for k in keys:
+      if reldata[k] not in drupaldb:
+        amulet.raise_status(amulet.FAIL, "Key {} not found in DB Settings".format(k))
+
+
+if __name__ == '__main__':
+  unittest.main()
