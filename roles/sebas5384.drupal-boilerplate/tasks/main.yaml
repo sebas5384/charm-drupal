@@ -3,6 +3,20 @@
   stat: "path={{ drupal_boilerplate_destination }}/{{ drupal_boilerplate_dirs.drupal.name }}"
   register: drupal_boilerplate_status
 
+- name: "Check if the destination already exist."
+  stat: "path={{ drupal_boilerplate_destination }}"
+  register: drupal_boilerplate_destination_status
+
+- name: "If destination exist move it to a backup directory."
+  shell: >
+    cp -R {{ drupal_boilerplate_destination }} {{ drupal_boilerplate_destination }}.ORIGINAL
+    rm -rf {{ drupal_boilerplate_destination }}/*
+    rm -rf {{ drupal_boilerplate_destination }}/.*
+  sudo: yes
+  when: >
+    drupal_boilerplate_destination_status.stat.exists
+    and not drupal_boilerplate_status.stat.exists
+
 - name: "Clone boilerplate form {{ drupal_boilerplate_source }}"
   git: |
     repo={{ drupal_boilerplate_source }}
