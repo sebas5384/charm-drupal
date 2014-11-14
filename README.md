@@ -25,13 +25,26 @@ This charm delivers a full optimzed stack for Drupal including the following:
 - **Drupal path.** In case you have an existant Drupal that hasn't use a boilerplate, you can always change this to /var/www for example. *Default: /var/www/docroot*
 
 ### Usage:
-#### Download the charm from git:
+
+#### Deploying drupal from local provider
+
+##### Download the charm from git:
 ```bash
 mkdir -p ~/charms/precise
 git clone git@github.com:sebas5384/charm-drupal.git ~/charms/precise/drupal
 ```
 
-#### Fresh new install:
+##### Preparing the charm for deployment:
+
+Before deploying the charm from local provider you must run the following commands:
+
+```bash
+$ sudo apt-get install bzr python-yaml python-nose python-mock python-flake8
+$ cd ~/charms/precise/drupal
+$ make sync-charm-helpers
+```
+
+##### Fresh new install:
 ```bash
 juju deploy --repository ~/charms local:precise/drupal
 juju deploy mysql
@@ -39,7 +52,7 @@ juju add-relation mysql drupal
 juju expose drupal
 ```
 
-#### Existing Drupal project:
+##### Existing Drupal project:
 - Create a config file for the project:
 ```yaml
 # file: project-x.yaml
@@ -62,8 +75,18 @@ drupal:
     -----END RSA PRIVATE KEY-----
 ```
 - Deploy the charm:
-```basg
+```bash
 juju deploy --repository ~/charms --config ./project-x.yaml local:precise/drupal
+juju deploy mysql
+juju add-relation mysql drupal
+juju expose drupal
+```
+
+#### Deploying drupal using the charm store:
+
+##### Fresh new install:
+```bash
+juju deploy cs:~sebas5384/precise/drupal
 juju deploy mysql
 juju add-relation mysql drupal
 juju expose drupal
