@@ -1,6 +1,6 @@
 ---
 drupal_boilerplate_source: https://github.com/TallerWebSolutions/drupal-boilerplate.git
-drupal_boilerplate_destination: /var/www
+drupal_boilerplate_destination: /var/drupal
 drupal_boilerplate_gitignore: true
 # Only when must create other dirs.
 drupal_boilerplate_build: false

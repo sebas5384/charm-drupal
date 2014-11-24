@@ -1,8 +1,37 @@
 ---
+- name: "Check if the project is already cloned."
+  stat: "path={{ drupal_project_path.stdout }}/.git"
+  register: drupal_project_cloned_status
+
+- name: "Check if the project destination directory is already there."
+  stat: "path={{ drupal_project_path.stdout }}"
+  register: drupal_project_destination_status
+
+
+- name: "If destination exist move it to a backup directory."
+  command: cp -Rf {{ drupal_project_path.stdout }} /home/{{ drupal_www_owner }}/{{ drupal_project_path.stdout|basename }}.ORIGINAL
+  sudo: yes
+
+  when: >
+    not drupal_project_cloned_status.stat.exists
+    and drupal_project_destination_status.stat.exists
+
+- name: "Remove git clone destination."
+  shell: >
+    rm -rf {{ drupal_project_path.stdout }}/*
+  sudo: yes
+  when: >
+    not drupal_project_cloned_status.stat.exists
+    and drupal_project_destination_status.stat.exists
+
 # - name: "Remove git clone destination."
 #   file: >
-#     path={{ drupal_path }}/{{ drupal_source_parent_level }}
-#     state=abstent
+#     path={{ drupal_project_path.stdout }}
+#     state=absent
+#   sudo: yes
+#   when: >
+#     not drupal_project_cloned_status.stat.exists
+#     and drupal_project_destination_status.stat.exists
 
 - name: "Download Drupal from Git repository."
   git: >
@@ -10,5 +39,10 @@
     version={{ drupal_version }}
     update=no
     accept_hostkey=yes
-    dest={{ drupal_path }}/{{ drupal_source_parent_level }}
+    dest={{ drupal_project_path.stdout }}
     key_file={{ drupal_ssh_key_file }}
+  register: drupal_project_cloned_status
+
+# - name: "Drupal is installed (not running), is a fact."
+#   set_fact: "drupal_is_installed"
+#   when: drupal_project_cloned_status.rc != 0
