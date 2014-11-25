@@ -10,8 +10,7 @@
 - name: "If destination exist move it to a backup directory."
   shell: >
     cp -R {{ drupal_boilerplate_destination }} {{ drupal_boilerplate_destination }}.ORIGINAL
-    rm -rf {{ drupal_boilerplate_destination }}/*
-    rm -rf {{ drupal_boilerplate_destination }}/.*
+    rm -rf {{ drupal_boilerplate_destination }}
   sudo: yes
   when: >
     drupal_boilerplate_destination_status.stat.exists

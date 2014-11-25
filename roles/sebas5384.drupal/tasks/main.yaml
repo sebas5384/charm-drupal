@@ -8,6 +8,11 @@
     drupal_admin_password == ""
     and drupal_source == "drush"
 
+- name: "Drupal project full path as destination for project."
+  shell: >
+    python -c "import os,sys; print os.path.realpath(sys.argv[1])" {{ drupal_path }}/{{ drupal_source_parent_level }}
+  register: drupal_project_path
+
 - name: "Override Drupal Admin password fact."
   set_fact: "drupal_admin_password={{ drupal_admin_password_result.stdout }}"
   when: drupal_admin_password_result.stdout is defined
