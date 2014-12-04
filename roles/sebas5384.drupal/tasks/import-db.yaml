@@ -5,13 +5,13 @@
     url={{ drupal_db_dump }}
     dest=/tmp
     validate_certs=no
-  register: drupal_db_dump_download_result
+  register: drupal_db_dump_get_result
   when: drupal_db_dump | match("^(http(s)?)://.+\.(sql|gz)$")
 
 - name: "Change the drupal_db_dump var to downloaded path."
   set_fact:
     drupal_db_dump: "/tmp/{{ drupal_db_dump | basename }}"
-  when: drupal_db_dump | match("^.+\.gz$") and drupal_db_dump_download_result.rc == 0
+  when: drupal_db_dump | match("^.+\.gz$") and is defined drupal_db_dump_get_result
 
 # Unpack the dump file. (in case)
 - name: "Unpacks the dump file."

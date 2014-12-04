@@ -8,10 +8,11 @@
   register: drupal_boilerplate_destination_status
 
 - name: "If destination exist move it to a backup directory."
-  shell: >
+  shell: |
     cp -R {{ drupal_boilerplate_destination }} {{ drupal_boilerplate_destination }}.ORIGINAL
-    rm -rf {{ drupal_boilerplate_destination }}
+    rm -rf {{ drupal_boilerplate_destination }}/*
   sudo: yes
+  sudo_user: root
   when: >
     drupal_boilerplate_destination_status.stat.exists
     and not drupal_boilerplate_status.stat.exists
@@ -22,6 +23,7 @@
     dest={{ drupal_boilerplate_destination }}
     update=no
     accept_hostkey=yes
+  sudo: yes
   when: not drupal_boilerplate_status.stat.exists and drupal_boilerplate_source != ""
 
 - command: "rm -rf {{ drupal_boilerplate_destination }}/.git removes={{ drupal_boilerplate_destination }}/.git"

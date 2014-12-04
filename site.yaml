@@ -184,6 +184,7 @@
 
     # Install: Drupal Boilerplate.
     - role: sebas5384.drupal-boilerplate
+      drupal_boilerplate_destination: /var/www
       when: >
         drupal_source == "drush"
       sudo: yes
@@ -195,7 +196,7 @@
     # Install: Drupal.
     - role: sebas5384.drupal
       drupal_source_parent_level: ".."
-      drupal_path: "{{ drupal_path }}"
+      # drupal_path: "{{ drupal_path }}"
       drupal_db:
         driver: mysql
         database: "{{ db_mysql__database }}"
